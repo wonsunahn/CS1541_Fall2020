@@ -66,10 +66,18 @@ available on the [Syllabus](syllabus.md)).
 
 TopHat questions will be released from time to time to review lecture
 materials.  They will be mostly multiple choice or fill-in-the-blank questions.
-The purpose is to make sure you are following the lecture material.  More
-in-depth questions that apply your knowledge will be posed for the homeworks.
-There will also be two projects that involve writing a CPU simulator using the
-C programming language.
+Half of the points will be awarded for just submitting the answers and the
+other half will be awarded only for correct answers.  The purpose is to make
+sure that everyone is following the lecture material (in a no-child-left-behind
+sense).  Hence you are free to discuss your solutions with your peers on Teams
+if you aren't sure (in fact you are encouraged to).  I will give a thumbs up to
+the correct answer, or leave hints if nobody got it.
+
+More in-depth questions that apply your knowledge will be posed for the
+homeworks.  There will also be two projects that involves writing a CPU
+simulator using the C programming language.  Homeworks and projects are
+individual work, so you are forbidden from discussing your solutions with your
+peers.
 
 Exams will NOT be allowed to be made up except with a valid and verified excuse
 (generally medical - others are left to the discretion of the instructor).
@@ -186,12 +194,16 @@ View the complete policy at www.cfo.pitt.edu/policies/policy/02/02-03-02.html.
 
 Some guidelines:
 
-_1. For all homeworks, projects, and exams, viewing the work done by your classmates (or a 3rd source) before submission is considered cheating.  Aiding this activity is also considered cheating._ 
+_1. For TopHat lecture questions, you are free to share and discuss your answers._
 
-_2. If you have a question that does not require showing your work, I encourage
+_2. For all homeworks, projects, and exams, viewing the work done by your
+classmates (or a 3rd source) before submission is considered cheating.  Showing
+your work is also considered to be abetting cheating._ 
+
+_3. If you have a question that does not require showing your work, I encourage
 you to post it publicly on Teams.  Keeping it public acts as a psychological
 guardrail; if you are hesitant about communicating publicly, chances are that
 you subconsciously are aware that you are compromising your integrity._
 
-_3. If you have a question that does require showing your work, please initiate
+_4. If you have a question that does require showing your work, please initiate
 a chat with your instructor on Teams._
