@@ -48,19 +48,19 @@ available on the [Syllabus](syllabus.md)).
 
 ## Grading
 
-* Midterms (60%):
-  * Midterm 1 - 20%
-  * Midterm 2 - 20%
-  * Midterm 3 - 20%
+* Midterms (45%):
+  * Midterm 1 - 15%
+  * Midterm 2 - 15%
+  * Midterm 3 - 15%
 * Projects (20%):
   * Project 1 - 10%
   * Project 2 - 10%
-* Homeworks (12%):
-  * Homework 1 - 3%
-  * Homework 2 - 3%
-  * Homework 3 - 3%
-  * Homework 4 - 3%
-* Participation (8%)
+* Homeworks (20%):
+  * Homework 1 - 5%
+  * Homework 2 - 5%
+  * Homework 3 - 5%
+  * Homework 4 - 5%
+* Participation (15%)
   * TopHat lecture questions
   * Teams participation
 
