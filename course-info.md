@@ -104,7 +104,9 @@ Score  | Grade
 
 All projects, homeworks, and exams will be submitted using GradeScope.
 
-Late assignments will receive a -10 percentage point penalty per day (e.g., if
+There is no late submission for homeworks and exams.
+
+There is late submission for projects.  Late projects will receive a -10 percentage point penalty per day (e.g., if
 you would have received a 90% on an assignment, but you turned it in 3 days
 late, you would receive 90 - 30 = 60%.).  
 
