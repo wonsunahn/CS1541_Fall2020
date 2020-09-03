@@ -15,8 +15,6 @@ CS/COE 1541 Computer Architecture
   
 * Class 1: Technology Push (Constraints)
 
-CPU Pipelining and its hazards
-
 * Class 2: Review of processor design ( Chapters 4.1-4.4) and Intro to Pipelining
   * Homework 1 released
 
