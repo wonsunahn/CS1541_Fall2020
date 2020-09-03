@@ -7,44 +7,46 @@ CS/COE 1541 Computer Architecture
   
 ## WEEK 2 (Week of 24 AUG)
 
-* Class 1: Review of MIPS Architecture (Chapters 1 and 2)
+* Class 1: Overview and Application Pull
 
-* Class 2: Review of processor design ( Chapters 4.1-4.4) and Intro to Pipelining 
-  * Homework 1 released
+* Class 2: Technology Push (Advances)
 
 ## WEEK 3 (Week of 31 AUG)
   
-* Class 1: CPU Pipelining and its hazards
+* Class 1: Technology Push (Constraints)
 
-* Class 2: Dealing with data / control hazards
-  * Homework 2 released
+* Class 2: Review of processor design ( Chapters 4.1-4.4) and Intro to Pipelining
+  * Homework 1 released
 
 ## WEEK 4 (Week of 7 SEP)
 
-* Class 1: Branch Prediction and exception handling
+* Class 1: Dealing with structural / data / control hazards
 
-* Class 2: Multiple issue pipelines
+* Class 2: Branch Prediction and pipeline flushing
   * Project 1 released
 
 ## WEEK 5 (Week of 14 SEP)
 
-* Class 1: Review for Midterm 1
+* Class 1: Multiple issue pipelines and loop-unrolling
+  * Homework 2 released
 
-* Class 2: Midterm 1 on GradeScope
-  * Take home exam submitted online
-  * Open book but individual work
+* Class 2: Out-of-order execution and exceptions
 
 ## WEEK 6 (Week of 21 SEP)
 
 * Class 1: Memory technology and the concept of caching
 
-* Class 2: Direct mapped caches
+* Class 2: Review for Midterm 1
+
+* Midterm 1 on GradeScope
+  * Take home exam submitted online
+  * Open book but individual work
 
 ## WEEK 7 (Week of 28 SEP)
 
-* Class 1: Set associative caches and cache performance
+* Class 1: Direct mapped caches / Set associative caches
 
-* Class 2: Software optimizations and memory reliability
+* Class 2: Cache performance and software optimizations
 
 ## WEEK 8 (Week of 5 OCT)
 
