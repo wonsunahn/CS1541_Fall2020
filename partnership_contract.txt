@@ -1,0 +1,31 @@
+[Partnership Contract]
+
+Please write your name and your partner's name below:
+
+Partner 1: [YOUR NAME]
+Partner 2: [YOUR PARTNER'S NAME]
+
+1. I shall do my fair share of work for all group work.  I understand that I
+may receive a different score from my partner upon adjudication, if a complaint
+is filed by my partner on that matter.  I understand that git repository commit
+history is an indication of my contribution to the group.
+
+2. I shall notify my partner on termination of partnership as soon as possible
+and no later than 2 days after project release (partnership initiation is
+allowed at any time up to the deadline).  I shall also immediately resubmit my
+new contract to courseweb on change of partnership status.
+
+3. I shall communicate with my partner on the division of work within 1 week
+of project release, or immediately on group formation if I form the group
+after 1 week has already passed.
+
+4. I shall respond to my partner's emails within 24 hours, bar an emergency.
+
+Please fill in your name(s), convert to PDF and submit to GradeScope at the
+"Partnership Contract" assignment link.  Please do an initial submission
+before 9/14 midnight.  If you don't have (or want) a partner, please leave the
+Partner 2 entry empty and fill in Partner 1 with your name.  Feel free to
+submit (and re-submit) your contract any time during the semester whenever you
+have a change in the status of your partnership.  Submitting this document on
+GradeScope will bind you to this contract, effective on the date of
+submission.
