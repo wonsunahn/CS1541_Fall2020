@@ -1,3 +1,23 @@
+- [CS/COE 1541 - Introduction to Computer Architecture](#cs-coe-1541---introduction-to-computer-architecture)
+- [Introduction](#introduction)
+  * [Description](#description)
+  * [Processor Design](#processor-design)
+- [Building and Running](#building-and-running)
+  * [Environment Setup](#environment-setup)
+  * [Directory Structure and Makefile Script](#directory-structure-and-makefile-script)
+  * [Program Output](#program-output)
+- [Configuration Files and Trace Files](#configuration-files-and-trace-files)
+  * [Configuration Files](#configuration-files)
+  * [Trace Files](#trace-files)
+- [Your Tasks](#your-tasks)
+  * [Task 1: Enforcing Stalls and Flushes on Hazards](#task-1--enforcing-stalls-and-flushes-on-hazards)
+    + [Structural hazards](#structural-hazards)
+    + [Data hazards](#data-hazards)
+    + [Control hazards](#control-hazards)
+  * [Task 2: Enabling Optimizations on the Hazards](#task-2--enabling-optimizations-on-the-hazards)
+  * [Source Code](#source-code)
+  * [Submission](#submission)
+  
 # CS/COE 1541 - Introduction to Computer Architecture
 Fall Semester 2020 - Project 1
 
