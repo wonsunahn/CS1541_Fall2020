@@ -10,11 +10,11 @@
   * [Configuration Files](#configuration-files)
   * [Trace Files](#trace-files)
 - [Your Tasks](#your-tasks)
-  * [Task 1: Enforcing Stalls and Flushes on Hazards](#task-1--enforcing-stalls-and-flushes-on-hazards)
+  * [Task 1: Enforcing Stalls and Flushes on Hazards](#task-1-enforcing-stalls-and-flushes-on-hazards)
     + [Structural hazards](#structural-hazards)
     + [Data hazards](#data-hazards)
     + [Control hazards](#control-hazards)
-  * [Task 2: Enabling Optimizations on the Hazards](#task-2--enabling-optimizations-on-the-hazards)
+  * [Task 2: Enabling Optimizations on the Hazards](#task-2-enabling-optimizations-on-the-hazards)
   * [Source Code](#source-code)
   * [Submission](#submission)
   
