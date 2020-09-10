@@ -1,30 +1,25 @@
-/**************************************************************/
-/* CS/COE 1541				 			
-This program allows the user to interactively input the instructions for a trace 
-and produce a trace file with these instructions readable by five_stage.c.
-The program takes the name of the file to be generated as an argument.
-***************************************************************/
+/** Code by @author Wonsun Ahn
+ * 
+ * Utility program to generate a trace file of your own.  Takes as argument the
+ * name of the file.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
 #include <arpa/inet.h>
 #include "CPU.h" 
+#include "trace.h" 
 
 int main(int argc, char **argv)
 {
-  struct instruction *tr_entry=malloc(sizeof(struct instruction));
+  instruction *tr_entry = (instruction *) malloc(sizeof(instruction));
   size_t size;
   char *trace_file_name;
   
-  unsigned char t_type ;
   unsigned int t_sReg_a;
   unsigned int t_sReg_b;
   unsigned int t_dReg;
-  unsigned int t_PC ;
-  unsigned int t_Addr ;
-
-  unsigned int cycle_number = 0;
 
   if (argc == 1) {
     fprintf(stdout, "\nMissing argument: the name of the file to be generated\n");
@@ -32,7 +27,6 @@ int main(int argc, char **argv)
   }
   trace_file_name = argv[1];
   fopen(trace_file_name, "w");
-  int check;
   int trcount, i, repeat;
   char itype ;
 
