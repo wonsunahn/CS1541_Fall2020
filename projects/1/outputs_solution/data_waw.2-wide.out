@@ -65,12 +65,12 @@
     NOP: (Seq:        0)(Regs:   0,   0,   0)                 IF  ID  EX MEM  WB 
 =================================================================================
 [CYCLE NUMBER: 5]
-[5: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [5: WB]   RTYPE: (Seq:        1)(Regs:   3,   1,   2)(Addr: 0)(PC: 4)
+[5: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
   RTYPE: (Seq:        1)(Regs:   3,   1,   2) IF  ID  EX MEM  WB 
+    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB 
    LOAD: (Seq:        2)(Regs:   3,   4,   0)     IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 
@@ -81,12 +81,12 @@
     NOP: (Seq:        0)(Regs:   0,   0,   0)                 IF  ID  EX MEM  WB 
 =================================================================================
 [CYCLE NUMBER: 6]
-[6: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [6: WB]    LOAD: (Seq:        2)(Regs:   3,   4,   0)(Addr: 1000)(PC: 8)
+[6: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
    LOAD: (Seq:        2)(Regs:   3,   4,   0) IF  ID  EX MEM  WB 
+    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 

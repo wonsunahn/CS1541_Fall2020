@@ -165,10 +165,27 @@ void print_pipeline()
       print_pipeline_row(get_NOP(), -4);
     }
   }
-  print_pipeline_row(MEM_ALU, -3);
-  print_pipeline_row(MEM_lwsw, -3);
-  print_pipeline_row(EX_ALU, -2);
-  print_pipeline_row(EX_lwsw, -2);
+  if (config->pipelineWidth == 2) {
+    print_pipeline_row(MEM_ALU, -3);
+    print_pipeline_row(MEM_lwsw, -3);
+    print_pipeline_row(EX_ALU, -2);
+    print_pipeline_row(EX_lwsw, -2);
+  } else if (config->pipelineWidth == 1) {
+    if (!is_NOP(MEM_ALU)) {
+      assert(is_NOP(MEM_lwsw));
+      print_pipeline_row(MEM_ALU, -3);
+    } else {
+      print_pipeline_row(MEM_lwsw, -3);
+    }
+    if (!is_NOP(EX_ALU)) {
+      assert(is_NOP(EX_lwsw));
+      print_pipeline_row(EX_ALU, -2);
+    } else {
+      print_pipeline_row(EX_lwsw, -2);
+    }
+  } else {
+    assert(0);
+  }
   for (int i = 0; i < config->pipelineWidth; i++) {
     if(i < (int)ID.size()) {
       print_pipeline_row(ID[i], -1);

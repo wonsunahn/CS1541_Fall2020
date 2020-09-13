@@ -38,6 +38,7 @@ extern dynamic_inst EX_ALU, MEM_ALU;
 extern dynamic_inst EX_lwsw, MEM_lwsw;
 
 bool is_finished();
+bool is_NOP(dynamic_inst dinst);
 dynamic_inst get_NOP();
 
 int writeback();
