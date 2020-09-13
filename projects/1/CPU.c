@@ -31,6 +31,10 @@ bool is_NOP(dynamic_inst dinst) {
   return inst.type == ti_NOP;
 }
 
+bool is_older(dynamic_inst dinst1, dynamic_inst dinst2) {
+  return is_NOP(dinst2) || (!is_NOP(dinst1) && dinst1.seq < dinst2.seq);
+}
+
 dynamic_inst get_NOP() {
   dynamic_inst dinst = {0};
   return dinst;
@@ -51,7 +55,7 @@ int writeback()
   static unsigned int cur_seq = 1;
 
   WB.clear();
-  if (MEM_ALU.seq < MEM_lwsw.seq) {
+  if (is_older(MEM_ALU, MEM_lwsw)) {
     WB.push_back(MEM_ALU);
     MEM_ALU = get_NOP();
     WB.push_back(MEM_lwsw);
