@@ -170,7 +170,7 @@ The format of one line in the printout is as follows.  For example, let's take t
 If the -d (debug) option is given on the commandline, the internal state of pipeline stages is printed at every clock cyle, which can be useful for debugging your simulator.  The -v option is implied by the -d option.  The Makefile script uses the -d option to generate outputs.  You can open the generated output file after building:
 
 ```
-$ nano outputs/sample.2-wide-opt.out
+$ nano outputs/sample.2-wide.out
 ```
 
 Or, you can run with the -d option yourself:
@@ -280,6 +280,31 @@ At [CYCLE NUMBER: 3], you will see that the order of LOAD and ITYPE has been fli
 At [CYCLE NUMBER: 4], we see our first bubble.  This is due to a structural hazard on the ALU/Branch EX unit.  There were two ITYPE instructions ready to issue in the ID stage at the previous cycle, but since there is only one ALU/Branch EX unit, only one could issue.  The lw/sw EX unit is filled with a NOP bubble.
 
 In this way, you can analyze the output to make sure that various pipeline hazards are handled properly and also your optimizations work properly.  Again, there is a set of reference outputs under the outputs_solution/ directory and diffs in the diffs/ directory that you can also analyze to figure out what you did wrong.
+
+Now, the simulator can also be run with a 1-wide processor configuration (see next section [Configuration Files](#configuration-files)).  Let's take a brief look at the output for that configuration:
+
+```
+$ nano outputs/sample.1-wide.out
+```
+
+You will see the following:
+
+```
+[CYCLE NUMBER: 1]
+[1: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
+[1: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
+[1: IF]    LOAD: (Seq:        1)(Regs:  16,  29, 255)(Addr: 2147450880)(PC: 2097312)
+=================================================================================
+                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
+    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB
+   LOAD: (Seq:        1)(Regs:  16,  29, 255)                 IF  ID  EX MEM  WB
+...
+```
+
+Since the processor is now 1-wide, there is only each of IF, ID, EX, MEM, and WB stages per cycle.  The EX stage may be the ALU/Branch EX unit or the lw/sw EX unit depending upon the instruction type.  Since only one of either can be active at a time, only one is shown.
 
 # Configuration Files and Trace Files
 
