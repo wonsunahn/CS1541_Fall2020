@@ -102,7 +102,7 @@ outputs_solution/ : Directory where outputs produced by five_stage_solution are 
 traces/ : Directory where instruction trace files used for simulation are stored.
 ```
 
-In order to build the project and run the simulations, you only need to do 'make':
+In order to build the project and run the simulations, you only need to do 'make' to invoke the 'Makefile' script:
 
 ```
 $ make
@@ -115,7 +115,7 @@ g++ -c -g -Wall -I/usr/include/glib-2.0/ -I/usr/lib64/glib-2.0/include/ trace.c
 
 If successful, it will produce the binaries: five_stage, trace_generator, and trace_reader as well as results of the simulation using all combinations of 4 configuration files and 8 trace files.  A configuration file represents a processor design and a trace file contain instructions from a micro-benchmark, so you will be in effect simulating 4 processor designs on a benchmark suite.  You can generate your own traces using the trace_generator and put it inside the traces/ directory or create a new configuration inside the confs/ directory, and they will be incorporated into the results automatically by the Makefile script.  The results are stored in the outputs/ directory and also side-by-side diffs with the outputs_solution/ directory are generated and stored in the diffs/ directory.  When you debug the program, you will find these side-by-side diffs useful.
 
-If you only wish to build your C files and not run the simulations, just do 'make build':
+If you only wish to build your C files and not run the simulations, just do 'make build' to invoked the 'build' target in the 'Makefile' script:
 
 ```
 $ make build
@@ -167,7 +167,19 @@ The format of one line in the printout is as follows.  For example, let's take t
 * (Addr: 2147450880) - This says the LOAD instruction read address 2147450880 in memory.
 * (PC: 2097312) - The PC (program counter, or instruction pointer) was 2097312 when the trace was generated.
 
-If the -d (debug) option is given on the commandline, the internal state of pipeline stages is printed at every clock cyle, which can be useful for debugging your simulator.  The -v option is implied by the -d option:
+If the -d (debug) option is given on the commandline, the internal state of pipeline stages is printed at every clock cyle, which can be useful for debugging your simulator.  The -v option is implied by the -d option.  The Makefile script uses the -d option to generate outputs.  You can open the generated output file after building:
+
+```
+$ nano outputs/sample.2-wide-opt.out
+```
+
+Or, you can run with the -d option yourself:
+
+```
+$ ./five_stage -t traces/sample.tr -c confs/2-wide.conf -d
+```
+
+And you should see the following output:
 
 ```
 [CYCLE NUMBER: 1]
