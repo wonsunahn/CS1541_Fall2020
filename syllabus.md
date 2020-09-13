@@ -25,7 +25,7 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Branch Prediction and pipeline flushing
 
-* Project 1 to be released
+* Project 1 released due Oct. 13 at 5:00 PM
 
 ## WEEK 5 (Week of 14 SEP)
 
