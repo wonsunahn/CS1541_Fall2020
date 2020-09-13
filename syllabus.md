@@ -17,7 +17,7 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Review of processor design ( Chapters 4.1-4.4) and Intro to Pipelining
   
-* Homework 1 released due Sep. 10 at 5:00 PM
+* Homework 1 released due Sep. 10 at 5:00 PM on GradeScope
 
 ## WEEK 4 (Week of 7 SEP)
 
@@ -25,7 +25,7 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Branch Prediction and pipeline flushing
 
-* Project 1 released due Oct. 13 at 5:00 PM
+* Project 1 released due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 5 (Week of 14 SEP)
 
