@@ -301,6 +301,7 @@ You will see the following:
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
     NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB
    LOAD: (Seq:        1)(Regs:  16,  29, 255)                 IF  ID  EX MEM  WB
+=================================================================================
 ...
 ```
 
