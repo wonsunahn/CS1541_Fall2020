@@ -9064,6 +9064,7 @@
 [553: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [553: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [553: IF]   ITYPE: (Seq:      255)(Regs:   2,   2, 255)(Addr: 8)(PC: 2149716)
+[553: IF]   RTYPE: (Seq:      256)(Regs:   2,   7,   2)(Addr: 0)(PC: 2149720)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 
     NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
@@ -9073,14 +9074,13 @@
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 
   RTYPE: (Seq:      253)(Regs:   2,   2,   3)             IF  ID  EX MEM  WB 
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB 
-  ITYPE: (Seq:      254)(Regs:   2, 255,   2)                 IF  ID  EX MEM  WB 
+  ITYPE: (Seq:      254)(Regs:   2, 255,   2)             IF  ID  EX MEM  WB 
   ITYPE: (Seq:      255)(Regs:   2,   2, 255)                 IF  ID  EX MEM  WB 
+  RTYPE: (Seq:      256)(Regs:   2,   7,   2)                 IF  ID  EX MEM  WB 
 =================================================================================
 [CYCLE NUMBER: 554]
 [554: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [554: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
-[554: IF]   RTYPE: (Seq:      256)(Regs:   2,   7,   2)(Addr: 0)(PC: 2149720)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 
     NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
@@ -23197,6 +23197,7 @@ SPECIAL: (Seq:      646)(Regs: 255, 255, 255) IF  ID  EX MEM  WB
 [1412: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [1412: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [1412: IF]   JTYPE: (Seq:      676)(Regs: 255, 255, 255)(Addr: 2138392)(PC: 2142964)
+[1412: IF]   RTYPE: (Seq:      677)(Regs:   8,   0,   4)(Addr: 0)(PC: 2138392)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 
     NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
@@ -23206,14 +23207,13 @@ SPECIAL: (Seq:      646)(Regs: 255, 255, 255) IF  ID  EX MEM  WB
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB 
   RTYPE: (Seq:      674)(Regs:   6,   6,   2)             IF  ID  EX MEM  WB 
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB 
-  ITYPE: (Seq:      675)(Regs:   6, 255,   6)                 IF  ID  EX MEM  WB 
+  ITYPE: (Seq:      675)(Regs:   6, 255,   6)             IF  ID  EX MEM  WB 
   JTYPE: (Seq:      676)(Regs: 255, 255, 255)                 IF  ID  EX MEM  WB 
+  RTYPE: (Seq:      677)(Regs:   8,   0,   4)                 IF  ID  EX MEM  WB 
 =================================================================================
 [CYCLE NUMBER: 1413]
 [1413: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [1413: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
-[1413: IF]   RTYPE: (Seq:      677)(Regs:   8,   0,   4)(Addr: 0)(PC: 2138392)
 [1413: IF]   ITYPE: (Seq:      678)(Regs:   2,   6, 255)(Addr: 8)(PC: 2138396)
 =================================================================================
                                        Cycle: -4  -3  -2  -1   0   1   2   3   4 

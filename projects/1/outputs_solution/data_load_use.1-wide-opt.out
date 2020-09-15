@@ -30,8 +30,8 @@
     NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB 
     NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB 
    LOAD: (Seq:        1)(Regs:   3,   1,   2)         IF  ID  EX MEM  WB 
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB 
-  RTYPE: (Seq:        2)(Regs:   5,   3,   4)                 IF  ID  EX MEM  WB 
+  RTYPE: (Seq:        2)(Regs:   5,   3,   4)             IF  ID  EX MEM  WB 
+    NOP: (Seq:        0)(Regs:   0,   0,   0)                 IF  ID  EX MEM  WB 
 =================================================================================
 [CYCLE NUMBER: 4]
 [4: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
