@@ -33,7 +33,7 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Out-of-order execution and exceptions
 
-* Homework 2 released due Sep. 24 at 5:00 PM on GradeScope
+* Homework 2 released due Sep. 22 at 5:00 PM on GradeScope
 
 ## WEEK 6 (Week of 21 SEP)
 
