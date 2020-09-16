@@ -25,6 +25,8 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Dealing with structural / data / control hazards
 
+* Homework 1 due Sep. 10 at 5:00 PM on GradeScope
+
 * Project 1 released due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 5 (Week of 14 SEP)
@@ -41,14 +43,18 @@ CS/COE 1541 Computer Architecture
 
 * Class 2: Out-of-order execution and exceptions
 
+* Homework 2 due Sep. 22 at 5:00 PM on GradeScope
+
 ## WEEK 7 (Week of 28 SEP)
 
 * Class 1: Memory technology and the concept of caching
 
 * Class 2: Review for Midterm 1
 
-* Midterm 1 on GradeScope
-  * Take home exam submitted online
+* Midterm 1 on GradeScope: Friday (Oct. 2) 10:00 AM - Sunday (Oct. 4) 10:00 AM
+  * Will be posted as link named "Midterm 1" at Friday 10:00 AM
+  * You will choose a 3 hour span to complete exam within the above 2-day period
+  * Your 3 hours begin the moment you click on link and agree to the terms on the next screen
   * Open book but individual work
 
 ## WEEK 8 (Week of 5 OCT)
@@ -62,6 +68,8 @@ CS/COE 1541 Computer Architecture
 * Class 1: Multiprocessor cache coherence
 
 * Class 2: Virtual Memory
+
+* Project 1 due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 10 (Week of 19 OCT)
 
