@@ -33,21 +33,21 @@ CS/COE 1541 Computer Architecture
 
 * Class 1: Optimizing structural / data / control hazards
 
-* Class 2: Branch Prediction and Predication
+* Class 2: Optimizing structural / data / control hazards (cont'd)
 
-* Homework 2 released due Sep. 22 at 5:00 PM on GradeScope
+* Homework 2 released due Sep. 24 at 5:00 PM on GradeScope
 
 ## WEEK 6 (Week of 21 SEP)
 
-* Class 1: Multiple issue pipelines and loop-unrolling
+* Class 1: Branch Prediction and Predication
 
-* Class 2: Out-of-order execution and exceptions
+* Class 2: Multiple issue pipelines and loop-unrolling
 
 * Homework 2 due Sep. 22 at 5:00 PM on GradeScope
 
 ## WEEK 7 (Week of 28 SEP)
 
-* Class 1: Memory technology and the concept of caching
+* Class 1: Out-of-order execution and exceptions
 
 * Class 2: Review for Midterm 1
 
@@ -59,21 +59,21 @@ CS/COE 1541 Computer Architecture
 
 ## WEEK 8 (Week of 5 OCT)
 
-* Class 1: Direct mapped caches / Set associative caches
+* Class 1: Memory technology and the concept of caching
 
-* Class 2: Cache performance and software optimizations
+* Class 2: Direct mapped caches / Set associative caches
 
 ## WEEK 9 (Week of 12 OCT)
 
-* Class 1: Multiprocessor cache coherence
+* Class 1: Cache performance and software optimizations
 
-* Class 2: Virtual Memory
+* Class 2: Multiprocessor cache coherence
 
 * Project 1 due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 10 (Week of 19 OCT)
 
-* Class 1: Virtual Memory (cont'd)
+* Class 1: Virtual Memory
 
 * Class 2: NO CLASS (Student Self-care Day)
 

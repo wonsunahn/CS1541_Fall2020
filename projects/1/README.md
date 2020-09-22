@@ -17,6 +17,7 @@
   * [Task 2: Enabling Optimizations on the Hazards](#task-2-enabling-optimizations-on-the-hazards)
   * [Source Code](#source-code)
   * [Submission](#submission)
+- [Resources](#resources)
   
 # CS/COE 1541 - Introduction to Computer Architecture
 Fall Semester 2020 - Project 1
@@ -494,3 +495,9 @@ JRTYPE - a jump register instruction (used for "return" in functions)
 ## Submission
 
 The submission will be through GradeScope.  Your submission will be mostly autograded using test cases.  I am still working on the autograder so the submission link is not up yet but most of the test cases will be identical with the traces in the traces/ directory.  So if you see no difference with the solution output, you should be mostly fine.  Please feel free to create traces of your own and compare against the reference five_stage_solution binary.
+
+# Resources
+
+* Windows SSH Terminal Client: [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
+* File Transfer Client: [FileZilla](https://filezilla-project.org/download.php?type=client)
+* Linux command line tutorial: [The Linux Command Line](http://linuxcommand.org/lc3_learning_the_shell.php)
