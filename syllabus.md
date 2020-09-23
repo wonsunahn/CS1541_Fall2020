@@ -49,20 +49,20 @@ CS/COE 1541 Computer Architecture
 
 * Class 1: Out-of-order execution and exceptions
 
+* Class 2: Memory technology and the concept of caching
+
+## WEEK 8 (Week of 5 OCT)
+
+* Class 1: Direct mapped caches / Set associative caches
+
 * Class 2: Review for Midterm 1
 
-* Midterm 1 on GradeScope: Friday (Oct. 2) 10:00 AM - Sunday (Oct. 4) 10:00 AM
+* Midterm 1 on GradeScope: Friday (Oct. 9) 10:00 AM - Sunday (Oct. 11) 10:00 AM
   * Will be posted as link named "Midterm 1" at Friday 10:00 AM
   * You will choose a 3 hour span to complete exam within the above 2-day period
   * Your 3 hours begin the moment you click on link and agree to the terms on the next screen
   * Open book but individual work
-
-## WEEK 8 (Week of 5 OCT)
-
-* Class 1: Memory technology and the concept of caching
-
-* Class 2: Direct mapped caches / Set associative caches
-
+  
 ## WEEK 9 (Week of 12 OCT)
 
 * Class 1: Cache performance and software optimizations
