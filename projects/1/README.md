@@ -324,6 +324,41 @@ Since the processor is now 1-wide, there is only each of IF, ID, EX, MEM, and WB
 
 ## Creating Performance Plots
 
+If you copied over the project files on or before Sep. 27, you will have to update the following files that were created anew:
+
+```
+Makefile
+generate_plot.plt
+generate_plot.py
+plot_confs/
+plots/
+plots_solution/
+```
+
+None of these are source files that you were asked to modify, so it shouldn't disrupt your work in any way.
+
+Once, you have those files updated, you will see the Makefile has a new target: plot.
+
+```
+$ make plot
+```
+
+The above command will create two files: IPC.pdf and IPC_solution.pdf.  The two files show the IPCs for the short traces in /afs/cs.pitt.edu/courses/1541/short_traces for the various processor configurations under plot_confs/, for your five_stage binary and the five_stage_solution binary respectively.
+
+If you open IPC_solution.pdf, you will see 8 bars (results of running each of the 4 short traces on a 1-wide processor and a 2-wide processor).  Each bar is a histogram with 5 component bars stacked up:
+
+* no optimization: IPC of a processor with no optimizations to avoid hazards
+* enableForwarding: Additional IPC gain when enableForwarding is set to true in the configuration file
+* branchPredictor: Additional IPC gain when branchPredictor and branchTargetBuffer are set to true in the configuration file
+* splitCaches: Additional IPC gain when splitCaches is set to true in the configuration file
+* regFileWritePorts=2: Additional IPC gain when regFileWritePorts is increased to 2 (from 1) in the configuration file
+
+Each optimization is turned on incrementally in the order listed above and the IPC gain measured.
+
+Now IPC.pdf (the plot generated from your five_stage) initially will look very different from IPC_solution.pdf.  It will show no components pertaining to IPC gains due to optimizations because the optimizations have yet to be implemented.  Also, the IPCs will be higher because bubbles due to hazards have not been implemented either.  But once you are done and you pass all the diff tests, your plot should look identical to the solution plot.
+
+You will need the plot to answer questions for the Project 1 Retrospective.  If your plot differs from the solution plot due to incomplete implementation, please use the solution plot to answer the questions.
+
 # Configuration Files and Trace Files
 
 ## Configuration Files
