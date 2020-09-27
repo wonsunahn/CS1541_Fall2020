@@ -25,7 +25,7 @@
 Fall Semester 2020 - Project 1
 
 * Source Code DUE: Oct 13 (Tuesday), 2020 5:00 PM 
-* Retrospective DUE: Oct 15 (Thursday), 2020 5:00 PM 
+* Retrospective DUE: Oct 20 (Tuesday), 2020 5:00 PM 
 
 # Introduction
 
@@ -569,7 +569,7 @@ You will do two submissions for this deliverable.
     
     **WARNING: Leaving your GitHub public, like any other method of publicizing your code, will be considered abetting plagiarism.**
 
-1. *(20 points)* Project 1 Retrospective (Due Oct.15 5:00 PM)
+1. *(20 points)* Project 1 Retrospective (Due Oct.20 5:00 PM)
 
     Click on the GradeScope "Project 1 Retrospective" link and answer the questions based on [Task 3: Analyzing Performance Plots](#task-3-analyzing-performance-plots).  Note that this submission is worth 20, not 10, points.  That is because 10 points are **extra credit**.  10 points worth of questions are either multiple choice or fill-in-the-blank questions which are easily answerable by simply reading the plot.  10 points worth of questions (the extra credit) are short answer questions that ask you to explain and make conjectures about the experimental results, and require some additional thinking.
     
