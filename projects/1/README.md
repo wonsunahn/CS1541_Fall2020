@@ -16,6 +16,7 @@
     + [Data hazards](#data-hazards)
     + [Control hazards](#control-hazards)
   * [Task 2: Enabling Optimizations on the Hazards](#task-2-enabling-optimizations-on-the-hazards)
+  * [Task 3: Analyzing Performance Plots](#task-3-analyzing-performance-plots)
   * [Source Code](#source-code)
   * [Submission](#submission)
 - [Resources](#resources)
@@ -342,10 +343,10 @@ plots_solution/
 
 None of these are source files that you were asked to modify, so it shouldn't disrupt your work in any way.
 
-Once, you have those files updated, you will see the Makefile has a new target: plot.
+Once, you have those files updated, you will see the Makefile has a new target: plots.
 
 ```
-$ make plot
+$ make plots
 ```
 
 The above command will create two files: IPC.pdf and IPC_solution.pdf.  The two files show the IPCs for the short traces in /afs/cs.pitt.edu/courses/1541/short_traces for the various processor configurations under plot_confs/, for your five_stage binary and the five_stage_solution binary respectively.
@@ -467,7 +468,11 @@ In terms of your simulator, this means on a taken branch, inserting bubbles into
 
 ## Task 2: Enabling Optimizations on the Hazards
 
-Implement all the hazard avoidance optimizations that were described in the [Configuration Files](#configuration-files) section and enable them when they are turned on in the configuration file.  Be careful that while the optimizations will reduce hazards drastically, there are some hazards that remain even after the optimizations.
+Implement all the hazard avoidance optimizations that were described in the [Configuration Files](#configuration-files) section and enable them when they are turned on in the configuration file.  Be careful that while the optimizations will reduce hazards drastically, there are some hazards that remain even after the optimizations.  After having completed this step, your five_stage simulator should be identical to the fve_stage_solution simulator and all diff tests should pass.
+
+## Task 3: Analyzing Performance Plots
+
+First, generate the IPC.pdf and IPC_solution.pdf performance plots and verify that they are identical.  Refer to the [Creating Performance Plots](#creating-performance-plots) section on how to generate these plots.  Then, answer the Project 1 Retrospective questions by analyzing the plots.
 
 ## Source Code
 
