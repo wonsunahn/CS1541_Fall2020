@@ -567,7 +567,7 @@ You will do two submissions for this deliverable.
     
     The alternative way to submit your source code is to directly upload the files.  All you have to do is drag and drop source files that you have modified on to the Upload window and press the Upload button.  The default files in this folder will be used for any files that you don't upload.  While this method in the short run is simpler than the GitHub method, you will find that using a source repository like GitHub is beneficial in the long run.
     
-    ** WARNING: Leaving your GitHub public, like any other method of publicizing your code, will be considered abetting plagiarism.**
+    **WARNING: Leaving your GitHub public, like any other method of publicizing your code, will be considered abetting plagiarism.**
 
 1. *(20 points)* Project 1 Retrospective (Due Oct.15 5:00 PM)
 
