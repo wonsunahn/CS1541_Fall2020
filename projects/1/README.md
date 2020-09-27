@@ -363,8 +363,6 @@ Each optimization is turned on incrementally in the order listed above and the I
 
 Now IPC.pdf (the plot generated from your five_stage) initially will look very different from IPC_solution.pdf.  It will show no components pertaining to IPC gains due to optimizations because the optimizations have yet to be implemented.  Also, the IPCs will be higher because bubbles due to hazards have not been implemented either.  But once you are done and you pass all the diff tests, your plot should look identical to the solution plot.
 
-You will need the plot to answer questions for the Project 1 Retrospective.  If your plot differs from the solution plot due to incomplete implementation, please use the solution plot to answer the questions.
-
 # Configuration Files and Trace Files
 
 ## Configuration Files
@@ -472,7 +470,7 @@ Implement all the hazard avoidance optimizations that were described in the [Con
 
 ## Task 3: Analyzing Performance Plots
 
-First, generate the IPC.pdf and IPC_solution.pdf performance plots and verify that they are identical.  Refer to the [Creating Performance Plots](#creating-performance-plots) section on how to generate these plots.  Then, answer the Project 1 Retrospective questions by analyzing the plots.
+First, generate the IPC.pdf and IPC_solution.pdf performance plots and verify that they are identical.  Refer to the [Creating Performance Plots](#creating-performance-plots) section on how to generate these plots.  Then, answer the Project 1 Retrospective questions by analyzing the plots.  **If your plot differs from the solution plot due to incomplete implementation, please use the solution plot to answer the questions**.
 
 ## Source Code
 
@@ -555,10 +553,32 @@ JRTYPE - a jump register instruction (used for "return" in functions)
 
 ## Submission
 
-The submission will be through GradeScope.  Your submission will be mostly autograded using test cases.  I am still working on the autograder so the submission link is not up yet but most of the test cases will be identical with the traces in the traces/ directory.  So if you see no difference with the solution output, you should be mostly fine.  Please feel free to create traces of your own and compare against the reference five_stage_solution binary.
+Each pairwise group will submit the exercise *once* to GradeScope, by *one member* of the group.  The submitting member will press the "View or edit group" link at the top-right corner of the assignment page after submission to add his/her partner.  That way, both of you will get a grade.  This applies to both the Project 1 Source Code and Project 1 Retrospective submissions explained below.
 
+You will do two submissions for this deliverable.
+
+1. *(90 points)* Project 1 Soure Code (Due Oct.13 5:00 PM)
+
+    The recommened way to submit the source code is by submitting your GitHub repository.  Create a **PRIVATE** github repository just for Project 1 (with only the files within this folder in it).  Add your partner as a collaborator so both of you have access.  Make sure you keep the repository **PRIVATE** so that nobody else can access your repository.  The reason I recommend this method is because GitHub is a good way to version your code so that your project doesn't evaporate if you spill coffee on your laptop.  Also, GitHub allows easy collaboration between your partner by having a central repository.  Those of you who are new to Git, here are some slides I have cooked up (which I don't have time to go over in class, but they are pretty much self explanatory):
+    
+    https://github.com/wonsunahn/CS1541_Fall2020/blob/master/lectures/Using_Git.pdf
+    
+    Once you are done modifying code, don't forget to commit and push your changes to the github repository.  Before you commit your changes, please do 'make distclean' so that you don't commit your large debug output files with your source code.  When you are done, submit your GitHub repository to GradeScope at the "Project 1 Soure Code" link.  Once you submit, GradeScope will run the autograder to grade you and give you instant feedback.  If you get deductions, fix your code based on the feedback and resubmit.  Repeat until you don't get deductions.  You will get deductions based on the number of failed diffs (-5 per failed diff).  This part of the submission is worth 90 points.  You start out with 18 failed diffs (out of 32) with no modifications to code, so you start out with 90 - 18 * 5 = 0 points.
+    
+    The alternative way to submit your source code is to directly upload the files.  All you have to do is drag and drop source files that you have modified on to the Upload window and press the Upload button.  The default files in this folder will be used for any files that you don't upload.  While this method in the short run is simpler than the GitHub method, you will find that using a source repository like GitHub is beneficial in the long run.
+    
+    ** WARNING: Leaving your GitHub public, like any other method of publicizing your code, will be considered abetting plagiarism.**
+
+1. *(20 points)* Project 1 Retrospective (Due Oct.15 5:00 PM)
+
+    Click on the GradeScope "Project 1 Retrospective" link and answer the questions based on [Task 3: Analyzing Performance Plots](#task-3-analyzing-performance-plots).  Note that this submission is worth 20, not 10, points.  That is because 10 points are **extra credit**.  10 points worth of questions are either multiple choice or fill-in-the-blank questions which are easily answerable by simply reading the plot.  10 points worth of questions (the extra credit) are short answer questions that ask you to explain and make conjectures about the experimental results, and require some additional thinking.
+    
+    Just like other scientists, computer architects try to draw conclusions from experimental data from their simulators.  Some conclusions are strongly supported by the data and other conclusions less so.  In a proper scientific publication, architects publish both the raw data and the conclusions they derived from it.  It is up to the reader to judge the strength of each conclusion based on the data provided.  By doing the extra credit, you will practice drawing conclusions from data, just like architects do every day.
+    
 # Resources
 
 * Windows SSH Terminal Client: [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html)
 * File Transfer Client: [FileZilla](https://filezilla-project.org/download.php?type=client)
 * Linux command line tutorial: [The Linux Command Line](http://linuxcommand.org/lc3_learning_the_shell.php)
+* GitHub tutorial: [Using Git](https://github.com/wonsunahn/CS1541_Fall2020/blob/master/lectures/Using_Git.pdf)
+* GitHub GUI Client: [GitHub Desktop](https://desktop.github.com/)
