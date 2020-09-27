@@ -557,7 +557,7 @@ Each pairwise group will submit the exercise *once* to GradeScope, by *one membe
 
 You will do two submissions for this deliverable.
 
-1. *(90 points)* Project 1 Soure Code (Due Oct.13 5:00 PM)
+1. **(90 points)** Project 1 Soure Code (Due Oct.13 5:00 PM)
 
     The recommened way to submit the source code is by submitting your GitHub repository.  Create a **PRIVATE** github repository just for Project 1 (with only the files within this folder in it).  Add your partner as a collaborator so both of you have access.  Make sure you keep the repository **PRIVATE** so that nobody else can access your repository.  The reason I recommend this method is because GitHub is a good way to version your code so that your project doesn't evaporate if you spill coffee on your laptop.  Also, GitHub allows easy collaboration between your partner by having a central repository.  Those of you who are new to Git, here are some slides I have cooked up (which I don't have time to go over in class, but they are pretty much self explanatory):
     
@@ -569,7 +569,7 @@ You will do two submissions for this deliverable.
     
     **WARNING: Leaving your GitHub public, like any other method of publicizing your code, will be considered abetting plagiarism.**
 
-1. *(20 points)* Project 1 Retrospective (Due Oct.20 5:00 PM)
+1. **(20 points)** Project 1 Retrospective (Due Oct.20 5:00 PM)
 
     Click on the GradeScope "Project 1 Retrospective" link and answer the questions based on [Task 3: Analyzing Performance Plots](#task-3-analyzing-performance-plots).  Note that this submission is worth 20, not 10, points.  That is because 10 points are **extra credit**.  10 points worth of questions are either multiple choice or fill-in-the-blank questions which are easily answerable by simply reading the plot.  10 points worth of questions (the extra credit) are short answer questions that ask you to explain and make conjectures about the experimental results, and require some additional thinking.
     
