@@ -90,19 +90,24 @@ The project files are within the directory /afs/cs.pitt.edu/courses/1541/project
 Here is an overview of the directory structure:
 
 ```
-five_stage_solution : Reference solution binary for the project.
 config.c / config.h : Functions used to parse and read in the processor configuration file.
-CPU.c / CPU.h : Implements the five stages of the processor pipeline.  The code you will be modifying mainly.
+CPU.c / CPU.h : Implements the five stages of the processor pipeline.  The code you will be **modifying**.
 five_stage.c : Main function. Parses commandline arguments and invokes the five stages in CPU.c at every clock cycle.
-Makefile : The build script for the Make tool.
 trace.c / trace.h : Functions to read and write the trace file.
 trace_generator.c : Utility program to generate a trace file of your own.
 trace_reader.c : Utility program to read and print out the contents of a trace file in human readable format.
+Makefile : The build script for the Make tool.
+five_stage_solution : **Reference solution binary** for the project.
+generate_plot.plt : GNUPlot script to generate the plot PDF file from the data.
+generate_plot.py: Python script to extrace performance data from results in tabular form.
 confs/ : Directory where processor configuration files are.
 diffs/ : Directory with diffs between outputs/ and outputs_solution/ are stored.
 outputs/ : Directory where outputs after running five_stage are stored.
 outputs_solution/ : Directory where outputs produced by five_stage_solution are stored.
-traces/ : Directory where instruction trace files used for simulation are stored.
+plot_confs/ : Directory where processor configurations for the plot generation are.
+plots/ : Directory where outputs after running five_stage are stored for plot generation.
+plots_solution/ : Directory where outputs after running five_stage_solution are stored for plot generation.
+traces/ : Directory where instruction trace files used to test the simulator are stored.
 ```
 
 In order to build the project and run the simulations, you only need to do 'make' to invoke the 'Makefile' script:
@@ -462,7 +467,7 @@ In terms of your simulator, this means on a taken branch, inserting bubbles into
 
 ## Task 2: Enabling Optimizations on the Hazards
 
-Enable all the hazard avoidance optimizations that were described in the [Configuration Files](#configuration-files) section.  Be careful that while the optimizations will reduce hazards drastically, there are some hazards that remain even after the optimizations.
+Implement all the hazard avoidance optimizations that were described in the [Configuration Files](#configuration-files) section and enable them when they are turned on in the configuration file.  Be careful that while the optimizations will reduce hazards drastically, there are some hazards that remain even after the optimizations.
 
 ## Source Code
 
