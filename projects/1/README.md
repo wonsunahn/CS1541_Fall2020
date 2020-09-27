@@ -6,6 +6,7 @@
   * [Environment Setup](#environment-setup)
   * [Directory Structure and Makefile Script](#directory-structure-and-makefile-script)
   * [Program Output](#program-output)
+  * [Creating Performance Plots](#creating-performance-plots)
 - [Configuration Files and Trace Files](#configuration-files-and-trace-files)
   * [Configuration Files](#configuration-files)
   * [Trace Files](#trace-files)
@@ -22,7 +23,8 @@
 # CS/COE 1541 - Introduction to Computer Architecture
 Fall Semester 2020 - Project 1
 
-* DUE: Oct 13 (Tuesday), 2020 5:00 PM 
+* Source Code DUE: Oct 13 (Tuesday), 2020 5:00 PM 
+* Retrospective DUE: Oct 15 (Thursday), 2020 5:00 PM 
 
 # Introduction
 
@@ -122,7 +124,19 @@ If you only wish to build your C files and not run the simulations, just do 'mak
 $ make build
 ```
 
-Optionally, you can also run your simulator on more sizable benchmarks.  I have 4 short and 2 long trace files (sample1.tr, sample2.tr, sample3.tr, sample4.tr) and (sample_large1.tr, sample_large2.tr). These files are accessible at /afs/cs.pitt.edu/courses/1541/long_traces and /afs/cs.pitt.edu/courses/1541/short_traces. But these are not incorporated into the Makefile script because they take significantly longer to run.  When you do run these on five_stage, I recommend you do not have the -v (verbose) or -d (debug) flags on or the simulations will take too long and the output may overflow your disk space.
+If you wish to remove all files generated from your five_stage implementation (object files and experiment output), invoke the 'clean' target:
+
+```
+$ make clean
+```
+
+If you wish to remove all generated files (including ones generated from five_stage_solution), invoke the 'distclean' target:
+
+```
+$ make distclean
+```
+
+You can also run your simulator on more sizable benchmarks.  I have 4 short and 2 long trace files: (sample1.tr, sample2.tr, sample3.tr, sample4.tr) and (sample_large1.tr, sample_large2.tr). These files are accessible at /afs/cs.pitt.edu/courses/1541/long_traces and /afs/cs.pitt.edu/courses/1541/short_traces. But these are not incorporated into the Makefile default target because they take significantly longer to run.  When you do run these on five_stage, I recommend you do not have the -v (verbose) or -d (debug) flags on or the simulations will take too long and the output may overflow your disk space.
 
 ## Program Output
 
@@ -307,6 +321,8 @@ You will see the following:
 ```
 
 Since the processor is now 1-wide, there is only each of IF, ID, EX, MEM, and WB stages per cycle.  The EX stage may be the ALU/Branch EX unit or the lw/sw EX unit depending upon the instruction type.  Since only one of either can be active at a time, only one is shown.
+
+## Creating Performance Plots
 
 # Configuration Files and Trace Files
 
