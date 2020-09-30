@@ -43,7 +43,6 @@ int main(int argc, char **argv)
         break;
       case 'd':
         debug = true;
-        verbose = true;
         break;
       case 't':
         trace_file_name = optarg;
