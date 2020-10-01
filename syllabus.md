@@ -41,7 +41,7 @@ CS/COE 1541 Computer Architecture
 
 * Class 1: Branch Prediction and Predication
 
-* Class 2: 
+* Class 2: Branch Prediction and Predication (cont'd)
 
 * Homework 2 due Sep. 22 at 5:00 PM on GradeScope
 
