@@ -41,19 +41,19 @@ CS/COE 1541 Computer Architecture
 
 * Class 1: Branch Prediction and Predication
 
-* Class 2: Multiple issue pipelines and loop-unrolling
+* Class 2: Branch Prediction and Predication (cont'd)
 
 * Homework 2 due Sep. 22 at 5:00 PM on GradeScope
 
 ## WEEK 7 (Week of 28 SEP)
 
-* Class 1: Out-of-order execution and exceptions
+* Class 1: Multiple issue pipelines and VLIWs
 
-* Class 2: Memory technology and the concept of caching
+* Class 2: VLIW compiler scheduling
 
 ## WEEK 8 (Week of 5 OCT)
 
-* Class 1: Direct mapped caches / Set associative caches
+* Class 1: Superscalars and exceptions
 
 * Class 2: Review for Midterm 1
 
@@ -65,17 +65,17 @@ CS/COE 1541 Computer Architecture
   
 ## WEEK 9 (Week of 12 OCT)
 
-* Class 1: Cache performance and software optimizations
+* Class 1: Caching intro / Direct mapped caches / Set associative caches
 
-* Class 2: Multiprocessor cache coherence
+* Class 2: Cache performance and software optimizations
 
 * Project 1 due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 10 (Week of 19 OCT)
 
-* Class 1: Virtual Memory
+* Class 1: Multiprocessor cache coherence
 
-* Class 2: NO CLASS (Student Self-care Day)
+* Class 2: Virtual Memory
 
 ## WEEK 11 (Week of 26 OCT)
 
