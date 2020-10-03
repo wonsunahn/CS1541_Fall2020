@@ -134,70 +134,59 @@ char* get_instruction_string(dynamic_inst dinst, bool long_form)
   return buffer;
 }
 
-void print_pipeline_row(dynamic_inst dinst, int cycle_number)
+void print_pipeline_row(dynamic_inst dinst, const char *stageName)
 {
-  printf("%45s", get_instruction_string(dinst, false));
-  for (int i = -4; i < cycle_number; i++) {
-    printf("%3s ", "");
-  }
-  printf("%3s ", "IF");
-  printf("%3s ", "ID");
-  printf("%3s ", "EX");
-  printf("%3s ", "MEM");
-  printf("%3s ", "WB");
-  printf("\n");
+  printf("%45s ", get_instruction_string(dinst, false));
+  printf("%s\n", stageName);
 }
 
 void print_pipeline()
 {
   printf("=================================================================================\n");
   // Print header
-  printf("%45s", "Cycle:");
-  for(int i = -4; i <= 4; i++) {
-    printf("%3d ", i);
-  }
-  printf("\n");
+  printf("%45s ", "");
+  printf("%s\n", "Pipeline Stage");
   // Print each instruction currently in the pipeline
   for (int i = 0; i < config->pipelineWidth; i++) {
     if(i < (int)WB.size()) {
-      print_pipeline_row(WB[i], -4);
+      print_pipeline_row(WB[i], "WB");
     } else {
-      print_pipeline_row(get_NOP(), -4);
+      print_pipeline_row(get_NOP(), "WB");
     }
   }
   if (config->pipelineWidth == 2) {
-    print_pipeline_row(MEM_ALU, -3);
-    print_pipeline_row(MEM_lwsw, -3);
-    print_pipeline_row(EX_ALU, -2);
-    print_pipeline_row(EX_lwsw, -2);
+    print_pipeline_row(MEM_ALU, "MEM_ALU");
+    print_pipeline_row(MEM_lwsw, "MEM_lwsw");
+    print_pipeline_row(EX_ALU, "EX_ALU");
+    print_pipeline_row(EX_lwsw, "EX_lwsw");
   } else if (config->pipelineWidth == 1) {
     if (!is_NOP(MEM_ALU)) {
       assert(is_NOP(MEM_lwsw));
-      print_pipeline_row(MEM_ALU, -3);
+      print_pipeline_row(MEM_ALU, "MEM");
     } else {
-      print_pipeline_row(MEM_lwsw, -3);
+      print_pipeline_row(MEM_lwsw, "MEM");
     }
     if (!is_NOP(EX_ALU)) {
       assert(is_NOP(EX_lwsw));
-      print_pipeline_row(EX_ALU, -2);
+      print_pipeline_row(EX_ALU, "EX");
     } else {
-      print_pipeline_row(EX_lwsw, -2);
+      print_pipeline_row(EX_lwsw, "EX");
     }
   } else {
     assert(0);
   }
   for (int i = 0; i < config->pipelineWidth; i++) {
     if(i < (int)ID.size()) {
-      print_pipeline_row(ID[i], -1);
+      print_pipeline_row(ID[i], "ID");
     } else {
-      print_pipeline_row(get_NOP(), -1);
+      print_pipeline_row(get_NOP(), "ID");
     }
   }
   for (int i = 0; i < config->pipelineWidth; i++) {
     if(i < (int)IF.size()) {
-      print_pipeline_row(IF[i], 0);
+      print_pipeline_row(IF[i], "IF");
     } else {
-      print_pipeline_row(get_NOP(), 0);
+      print_pipeline_row(get_NOP(), "IF");
     }
   }
   printf("=================================================================================\n");
