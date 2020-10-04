@@ -442,7 +442,7 @@ There are two additional structural hazards that I want you to implement:
 
 * The structural hazard on memory read ports: When a LOAD (lw) instruction is at the MEM stage where it reads from memory it is in contention with the IF stage of a later instruction which also reads from memory to fetch instructions.  In this case, the HDU must delay all instruction fetches (both of them) one cycle until the lw MEM stage is over.  Note that a STORE (sw) instruction does not matter because it uses the write port of memory.
 
-* The structural hazard on register file write ports: When a LOAD instruction and an ALU instruction both attempt to write to the register file at the WB stage, there is a structural hazard on the write port, if there is only one.  In this case, the contention should be resolved by having the older instruction go first while the younger remains in the WB stage.
+* The structural hazard on register file write ports: When a LOAD instruction and an ALU instruction both attempt to write to the register file at the WB stage, there is a structural hazard on the write port, if there is only one.  In this case, the contention should be resolved by having the older instruction go first while the younger remains in the MEM stage.
 
 ### Data hazards
 
