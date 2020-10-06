@@ -209,22 +209,22 @@ And you should see the following output:
 [1: IF]    LOAD: (Seq:        1)(Regs:  16,  29, 255)(Addr: 2147450880)(PC: 2097312)
 [1: IF]   ITYPE: (Seq:        2)(Regs:  28, 255, 255)(Addr: 4097)(PC: 2097316)
 =================================================================================
-                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB
-   LOAD: (Seq:        1)(Regs:  16,  29, 255)                 IF  ID  EX MEM  WB
-  ITYPE: (Seq:        2)(Regs:  28, 255, 255)                 IF  ID  EX MEM  WB
+                                              Pipeline Stage
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_lwsw
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX_lwsw
+    NOP: (Seq:        0)(Regs:   0,   0,   0) ID
+    NOP: (Seq:        0)(Regs:   0,   0,   0) ID
+   LOAD: (Seq:        1)(Regs:  16,  29, 255) IF
+  ITYPE: (Seq:        2)(Regs:  28, 255, 255) IF
 =================================================================================
 ...
 ```
 
-At each clock cycle, the timeline of the pipeline at cycles -4, -3, -2, -1, 0, 1, 2, 3, 4 are given.  Cycle "0" refers to the current clock cycle.  If you see [CYCLE NUMBER: 1] on the above printout, you will see that at cycle "0" instructions LOAD and ITYPE are at the IF stage because they have just been fetched.  Remember that this is a 2-wide processor so we are able to process two instructions per cycle.
+If you see [CYCLE NUMBER: 1] on the above printout, you will see that instructions LOAD and ITYPE are at the IF stage because they have just been fetched.  Remember that this is a 2-wide processor so we are able to process two instructions per cycle.
 
 ```
 ...
@@ -234,22 +234,22 @@ At each clock cycle, the timeline of the pipeline at cycles -4, -3, -2, -1, 0, 1
 [2: IF]   ITYPE: (Seq:        3)(Regs:  28,  28, 255)(Addr: -16384)(PC: 2097320)
 [2: IF]   ITYPE: (Seq:        4)(Regs:  17,  29, 255)(Addr: 4)(PC: 2097324)
 =================================================================================
-                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-   LOAD: (Seq:        1)(Regs:  16,  29, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        2)(Regs:  28, 255, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        3)(Regs:  28,  28, 255)                 IF  ID  EX MEM  WB
-  ITYPE: (Seq:        4)(Regs:  17,  29, 255)                 IF  ID  EX MEM  WB
+                                              Pipeline Stage
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_lwsw
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX_lwsw
+   LOAD: (Seq:        1)(Regs:  16,  29, 255) ID
+  ITYPE: (Seq:        2)(Regs:  28, 255, 255) ID
+  ITYPE: (Seq:        3)(Regs:  28,  28, 255) IF
+  ITYPE: (Seq:        4)(Regs:  17,  29, 255) IF
 =================================================================================
 ...
 ```
 
-At [CYCLE NUMBER: 2], the LOAD and ITYPE instructions are now at the ID stage (at cycle "0").  At cycle "-1" (relative to the current cycle), the instructions were at the IF stage.  At cycle "1", they will be at the EX stage.
+At [CYCLE NUMBER: 2], the LOAD and ITYPE instructions are now at the ID stage.
 
 ```
 ...
@@ -259,22 +259,22 @@ At [CYCLE NUMBER: 2], the LOAD and ITYPE instructions are now at the ID stage (a
 [3: IF]   ITYPE: (Seq:        5)(Regs:   3,  17, 255)(Addr: 4)(PC: 2097328)
 [3: IF]   ITYPE: (Seq:        6)(Regs:   2, 255,  16)(Addr: 2)(PC: 2097332)
 =================================================================================
-                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-  ITYPE: (Seq:        2)(Regs:  28, 255, 255)         IF  ID  EX MEM  WB
-   LOAD: (Seq:        1)(Regs:  16,  29, 255)         IF  ID  EX MEM  WB
-  ITYPE: (Seq:        3)(Regs:  28,  28, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        4)(Regs:  17,  29, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        5)(Regs:   3,  17, 255)                 IF  ID  EX MEM  WB
-  ITYPE: (Seq:        6)(Regs:   2, 255,  16)                 IF  ID  EX MEM  WB
+                                              Pipeline Stage
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM_lwsw
+  ITYPE: (Seq:        2)(Regs:  28, 255, 255) EX_ALU
+   LOAD: (Seq:        1)(Regs:  16,  29, 255) EX_lwsw
+  ITYPE: (Seq:        3)(Regs:  28,  28, 255) ID
+  ITYPE: (Seq:        4)(Regs:  17,  29, 255) ID
+  ITYPE: (Seq:        5)(Regs:   3,  17, 255) IF
+  ITYPE: (Seq:        6)(Regs:   2, 255,  16) IF
 =================================================================================
 ...
 ```
 
-At [CYCLE NUMBER: 3], you will see that the order of LOAD and ITYPE has been flipped to ITYPE and LOAD.  This is not a change in the ordering in any sense.  For the EX stage, the top row refers to the ALU/Branch EX unit and the bottom row refers to the lw/sw EX unit.  Since ITYPE belongs to the former and LOAD belongs to the latter, that's why the ordering changed.  The same applies to the MEM stage.
+At [CYCLE NUMBER: 3], you will see that the order of LOAD and ITYPE has been flipped to ITYPE and LOAD.  This is not a change in the ordering in any sense.  For the EX stage, the top row (EX_ALU) refers to the ALU/Branch EX unit and the bottom row (EX_lwsw) refers to the lw/sw EX unit.  Since ITYPE belongs to the former and LOAD belongs to the latter, that's why the ordering changed.  The same applies to the MEM stage.
 
 ```
 ...
@@ -283,17 +283,17 @@ At [CYCLE NUMBER: 3], you will see that the order of LOAD and ITYPE has been fli
 [4: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [4: IF]   RTYPE: (Seq:        7)(Regs:   3,   3,   2)(Addr: 0)(PC: 2097336)
 =================================================================================
-                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-  ITYPE: (Seq:        2)(Regs:  28, 255, 255)     IF  ID  EX MEM  WB
-   LOAD: (Seq:        1)(Regs:  16,  29, 255)     IF  ID  EX MEM  WB
-  ITYPE: (Seq:        3)(Regs:  28,  28, 255)         IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-  ITYPE: (Seq:        4)(Regs:  17,  29, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        5)(Regs:   3,  17, 255)             IF  ID  EX MEM  WB
-  ITYPE: (Seq:        6)(Regs:   2, 255,  16)                 IF  ID  EX MEM  WB
-  RTYPE: (Seq:        7)(Regs:   3,   3,   2)                 IF  ID  EX MEM  WB
+                                              Pipeline Stage
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+  ITYPE: (Seq:        2)(Regs:  28, 255, 255) MEM_ALU
+   LOAD: (Seq:        1)(Regs:  16,  29, 255) MEM_lwsw
+  ITYPE: (Seq:        3)(Regs:  28,  28, 255) EX_ALU
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX_lwsw
+  ITYPE: (Seq:        4)(Regs:  17,  29, 255) ID
+  ITYPE: (Seq:        5)(Regs:   3,  17, 255) ID
+  ITYPE: (Seq:        6)(Regs:   2, 255,  16) IF
+  RTYPE: (Seq:        7)(Regs:   3,   3,   2) IF
 =================================================================================
 ...
 ```
@@ -316,12 +316,12 @@ You will see the following:
 [1: WB]     NOP: (Seq:        0)(Regs:   0,   0,   0)(Addr: 0)(PC: 0)
 [1: IF]    LOAD: (Seq:        1)(Regs:  16,  29, 255)(Addr: 2147450880)(PC: 2097312)
 =================================================================================
-                                       Cycle: -4  -3  -2  -1   0   1   2   3   4
-    NOP: (Seq:        0)(Regs:   0,   0,   0) IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)     IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)         IF  ID  EX MEM  WB
-    NOP: (Seq:        0)(Regs:   0,   0,   0)             IF  ID  EX MEM  WB
-   LOAD: (Seq:        1)(Regs:  16,  29, 255)                 IF  ID  EX MEM  WB
+                                              Pipeline Stage
+    NOP: (Seq:        0)(Regs:   0,   0,   0) WB
+    NOP: (Seq:        0)(Regs:   0,   0,   0) MEM
+    NOP: (Seq:        0)(Regs:   0,   0,   0) EX
+    NOP: (Seq:        0)(Regs:   0,   0,   0) ID
+   LOAD: (Seq:        1)(Regs:  16,  29, 255) IF
 =================================================================================
 ...
 ```
@@ -442,7 +442,7 @@ There are two additional structural hazards that I want you to implement:
 
 * The structural hazard on memory read ports: When a LOAD (lw) instruction is at the MEM stage where it reads from memory it is in contention with the IF stage of a later instruction which also reads from memory to fetch instructions.  In this case, the HDU must delay all instruction fetches (both of them) one cycle until the lw MEM stage is over.  Note that a STORE (sw) instruction does not matter because it uses the write port of memory.
 
-* The structural hazard on register file write ports: When a LOAD instruction and an ALU instruction both attempt to write to the register file at the WB stage, there is a structural hazard on the write port, if there is only one.  In this case, the contention should be resolved by having the older instruction go first while the younger remains in the WB stage.
+* The structural hazard on register file write ports: When a LOAD instruction and an ALU instruction both attempt to write to the register file at the WB stage, there is a structural hazard on the write port, if there is only one.  In this case, the contention should be resolved by having the older instruction go first while the younger remains in the MEM stage.
 
 ### Data hazards
 
