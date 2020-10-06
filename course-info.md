@@ -49,9 +49,8 @@ available on the [Syllabus](syllabus.md)).
 ## Grading
 
 * Midterms (45%):
-  * Midterm 1 - 15%
-  * Midterm 2 - 15%
-  * Midterm 3 - 15%
+  * Midterm 1 - 22.5%
+  * Midterm 2 - 22.5%
 * Projects (20%):
   * Project 1 - 10%
   * Project 2 - 10%
