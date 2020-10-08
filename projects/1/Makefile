@@ -31,13 +31,13 @@ CPU.o: CPU.h config.h trace.h
 trace_reader.o: CPU.h trace.h
 
 five_stage: five_stage.o config.o CPU.o trace.o
-	$(CC) $(LOPT) $^ -o $@
+	$(CC) $^ $(LOPT) -o $@
 
 trace_reader: trace_reader.o config.o CPU.o trace.o
-	$(CC) $(LOPT) $^ -o $@
+	$(CC) $^ $(LOPT) -o $@
 
 trace_generator: trace_generator.o config.o CPU.o trace.o
-	$(CC) $(LOPT) $^ -o $@
+	$(CC) $^ $(LOPT) -o $@
 
 %.o: %.c
 	$(CC) -c $(COPT) $<
