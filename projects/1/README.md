@@ -24,7 +24,7 @@
 # CS/COE 1541 - Introduction to Computer Architecture
 Fall Semester 2020 - Project 1
 
-* Source Code DUE: Oct 13 (Tuesday), 2020 5:00 PM 
+* Source Code DUE: Oct 15 (Thursday), 2020 5:00 PM (2 day extension)
 * Retrospective DUE: Oct 20 (Tuesday), 2020 5:00 PM 
 
 # Introduction

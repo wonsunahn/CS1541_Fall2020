@@ -14,25 +14,26 @@ typedef struct node {
 
 // Keep a pointer to the beginning and end of the list
 int items = 0;
-node_t *array = NULL;
+node_t* head = NULL;
+node_t* last = NULL;
 
 void *create(void *unused) {
-  array = (node_t *) malloc(sizeof(node_t) * items);
+  head = (node_t *) malloc(sizeof(node_t) * items);
+  last = head + items - 1;
   for(int i=0; i<items; i++) {
-    // Emulate the same mallocs as in linked list
-    for(int j=0; j<10; j++) {
-      (node_t*)malloc(sizeof(node_t));
-    }
+    node_t* n = &head[items];
+    n->next = &head[items+1];
   }
+  last->next = NULL;
 }
 
 void *run(void *unused) {
   // Now that we have an array, traverse the array over and over again until we've
   // visited `ACCESSES` elements in our array.
-  node_t* current = array;
+  node_t* current = head;
   for(int i=0; i<ACCESSES; i++) {
-    if(current == array + items) current = array;
-    else ++current;
+    if(current == NULL) current = head;
+    else current = current->next;
   }
 
   return NULL;

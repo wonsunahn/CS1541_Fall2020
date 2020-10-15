@@ -23,8 +23,8 @@ def getIPC(reportRoot, target, size):
   f.close
 
   cols = lastLine.split()
-  insts = float(cols[2])
-  cycles = float(cols[3])
+  insts = float(cols[3])
+  cycles = float(cols[4])
   ipc = insts / cycles
   return ipc
 
@@ -44,7 +44,8 @@ def main():
        fileName = arg
 
   targets = ["array", "array_nodata", "linked-list", "linked-list_nodata"]
-  sizes = ["100", "500", "1000", "5000", "10000", "50000", "100000", "500000", "1000000"]
+  sizes = ["50", "100", "500", "1000", "5000", "10000", "50000", "100000", "500000", "1000000", "5000000", "10000000"]
+  #sizes = ["50", "100", "500", "600", "700", "800", "900", "1000", "1100", "1200", "1300", "1400", "1500", "1600", "1700", "1800", "1900", "2000", "5000", "10000", "50000", "100000", "500000", "1000000", "5000000", "10000000"]
 
   f = open(fileName,"w")
   f.write("%10s " % "#Elements")

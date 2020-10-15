@@ -5,7 +5,7 @@ import getopt
 import glob
 
 def getPercentage(reportRoot, target, size):
-  fileList = glob.glob(reportRoot + "/" + target + "." + size + ".mem")
+  fileList = glob.glob(reportRoot + "/" + target + "." + size + ".perf")
   assert len(fileList) == 1
   fileName = fileList[0]
 
@@ -23,10 +23,10 @@ def getPercentage(reportRoot, target, size):
   f.close
 
   cols = lastLine.split()
-  memstalls = float(cols[6])
-  cycles = float(cols[7])
+  memstalls = float(cols[2])
+  cycles = float(cols[4])
   percentage = memstalls / cycles * 100
-  #print "target = %s, size = %s, memstalls = %f, cycles = %f" % (target, size, memstalls, cycles)
+#  print "target = %s, size = %s, memstalls = %f, cycles = %f" % (target, size, memstalls, cycles)
   return percentage
 
 def main():
@@ -45,7 +45,7 @@ def main():
        fileName = arg
 
   targets = ["array", "array_nodata", "linked-list", "linked-list_nodata"]
-  sizes = ["100", "500", "1000", "5000", "10000", "50000", "100000", "500000", "1000000"]
+  sizes = ["50", "100", "500", "1000", "5000", "10000", "50000", "100000", "500000", "1000000", "5000000", "10000000"]
 
   f = open(fileName,"w")
   f.write("%10s " % "#Elements")
