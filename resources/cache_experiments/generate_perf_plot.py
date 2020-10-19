@@ -25,8 +25,8 @@ def getIPC(reportRoot, target, size):
   cols = lastLine.split()
   insts = float(cols[3])
   cycles = float(cols[4])
-  ipc = insts / cycles
-  return ipc
+  cpi = cycles / insts
+  return cpi
 
 def main():
   try:
@@ -55,8 +55,8 @@ def main():
   for size in sizes:
     f.write("%10s " % size)
     for target in targets:
-      ipc = getIPC(reportRoot, target, size)
-      f.write("%10.2f " % ipc)
+      cpi = getIPC(reportRoot, target, size)
+      f.write("%10.2f " % cpi)
     f.write('\n')
   f.close
 
