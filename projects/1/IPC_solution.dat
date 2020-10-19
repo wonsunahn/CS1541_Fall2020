@@ -1,0 +1,9 @@
+     Benchmarks no-opt data-opt data-control-opt data-control-mem-opt data-control-mem-reg-opt 
+ sample1.1-wide 0.3607   0.3098           0.1981               0.0424                   0.0000 
+ sample1.2-wide 0.3761   0.3537           0.3433               0.0097                   0.0383 
+ sample2.1-wide 0.4329   0.1945           0.1432               0.1516                   0.0000 
+ sample2.2-wide 0.4572   0.2550           0.2579               0.0989                   0.0464 
+ sample3.1-wide 0.3759   0.1840           0.1803               0.0981                   0.0000 
+ sample3.2-wide 0.3842   0.2248           0.2907               0.0730                   0.0439 
+ sample4.1-wide 0.3875   0.2283           0.1737               0.0994                   0.0000 
+ sample4.2-wide 0.4027   0.2766           0.2965               0.0633                   0.0431 
