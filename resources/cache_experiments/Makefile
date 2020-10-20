@@ -9,19 +9,19 @@ SIZES = 1 5 10 50 100 500 1000 5000 10000 50000 100000 500000 1000000 5000000 10
 PERF_DATA := $(foreach target,$(TARGETS),$(foreach size, $(SIZES), outputs/$(target).$(size).perf))
 CACHE_DATA := $(foreach target,$(TARGETS),$(foreach size, $(SIZES), outputs/$(target).$(size).cache))
 CACHE_PLOTS := $(foreach target,$(TARGETS), $(target).cache.pdf)
-PLOTS := IPC.pdf MemStalls.pdf $(CACHE_PLOTS)
+PLOTS := CPI.pdf MemStalls.pdf $(CACHE_PLOTS)
 
-all: $(TARGETS) $(PERF_DATA) $(CACHE_DATA) $(PLOTS)
+all: $(TARGETS) $(PLOTS)
 
-.PRECIOUS: $(foreach target,$(TARGETS), $(target).cache.dat)
+.PRECIOUS: $(foreach target,$(TARGETS), $(target).cache.dat) $(PERF_DATA) $(CACHE_DATA)
 
 %.o: %.c
 	$(CC) $(COPT) -c $<
 
-IPC.pdf: IPC.dat generate_perf_plot.plt
+CPI.pdf: CPI.dat generate_perf_plot.plt
 	$(GNUPLOT) -e "inputFile='$<'" -e "outputFile='$@'" generate_perf_plot.plt
 
-IPC.dat: $(PERF_DATA) generate_perf_plot.py
+CPI.dat: $(PERF_DATA) generate_perf_plot.py
 	python generate_perf_plot.py -i outputs -o $@
 
 MemStalls.pdf: MemStalls.dat generate_memstalls_plot.plt
