@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>blarf</title>
+	<link rel="stylesheet" type="text/css" href="jquery-ui-1.12.1/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="cache_demo_style.css">
+	<script src="jquery-3.1.1.js"></script>
+	<script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+	<script src="cache_demo.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Cache Visualizer</h1>
+	</header>
+	<main>
+		<section id="parameters">
+			<h2>Cache parameters</h2>
+
+			<p>Click the spinners to change the cache parameters. This assumes 32-bit addresses and 32-bit words.</p>
+
+			<table class="inputs">
+				<tr>
+					<th>Words per block:</th>
+					<td><span class="big-num">2<sup><input class="num-spinner" id="blockSizeSpinner" type="text" readonly value="0"></sup></span></td>
+					<td>=</td>
+					<td><span class="num-display" id="wordsPerBlockDisplay1"></span> words per block<br>
+					(<span class="num-display" id="wordSelectBitsDisplay"></span> word select bits)</td>
+				</tr>
+				<tr>
+					<th>Number of blocks:</th>
+					<td><span class="big-num">2<sup><input class="num-spinner" id="numBlocksSpinner" type="text" readonly value="2"></sup></span></td>
+					<td>=</td>
+					<td><span class="num-display" id="numBlocksDisplay1"></span> blocks</td>
+				</tr>
+				<tr>
+					<th>Associativity:</th>
+					<td><span class="big-num">2<sup><input class="num-spinner" id="assocSpinner" type="text" readonly value="0"></sup></span></td>
+					<td>=</td>
+					<td><span class="num-display" id="assocDisplay1"></span>-way</td>
+				</tr>
+				<tr>
+					<th>Number of rows:</th>
+					<td><div class="frac"><div><span class="num-display" id="numBlocksDisplay2"></span> blocks</div>
+					<div class="frac-denominator"><span class="num-display" id="assocDisplay2"></span> ways</div></div></td>
+					<td>=</td>
+					<td><span class="num-display" id="numRowsDisplay"></span> rows<br>
+						(<span class="num-display" id="rowIndexBitsDisplay"></span> row index bits)</td>
+				</tr>
+				<tr>
+					<th>Write scheme:</th>
+					<td colspan="3" style="width: auto">
+						<fieldset>
+							<label for="writeThrough">Write-through</label>
+							<input type="radio" name="writeSchemeRadio" id="writeThrough" checked>
+							<label for="writeBack">Write-back</label>
+							<input type="radio" name="writeSchemeRadio" id="writeBack">
+						</fieldset>
+					</td>
+				</tr>
+			</table>
+		</section>
+
+		<section id="storage-address">
+			<h2>Cache storage</h2>
+
+			<table class="storage-display">
+				<tr>
+					<th>Cache data size:</th>
+					<td style="display: flex; align-items: center">
+						<div class="frac"><div><span class="num-display" id="bytesPerWordDisplay"></span> bytes</div>
+							<div class="frac-denominator">word</div></div> &times;
+						<div class="frac"><div><span class="num-display" id="wordsPerBlockDisplay2"></span> words</div>
+							<div class="frac-denominator">block</div></div> &times;
+						<span class="num-display" id="numBlocksDisplay3"></span> blocks</td>
+					<td>=</td>
+	 				<td><span class="num-display" id="cacheSizeDisplay1"></span> bytes</td>
+				</tr>
+				<tr>
+					<th>Tag storage:</th>
+					<td><span class="num-display" id="tagBitsDisplay"></span> tag bits &times;
+						<span class="num-display" id="numBlocksDisplay4"></span> blocks</td>
+					<td>=</td>
+	 				<td><span class="num-display" id="tagStorageDisplay1"></span> bits</td>
+				</tr>
+				<tr>
+					<th>Valid + dirty bits:</th>
+					<td>(<span class="num-display" id="validBitsDisplay"></span> +
+						<span class="num-display" id="dirtyBitsDisplay"></span>) &times;
+						<span class="num-display" id="numBlocksDisplay5"></span> blocks</td>
+					<td>=</td>
+	 				<td><span class="num-display" id="validDirtyStorageDisplay1"></span> bits</td>
+				</tr>
+				<tr>
+					<th>Metadata size:</th>
+					<td><div class="frac"><div><span class="num-display" id="tagStorageDisplay2"></span> +
+						<span class="num-display" id="validDirtyStorageDisplay2"></span></div>
+						<div class="frac-denominator num-display">8</div></div></td>
+					<td>=</td>
+	 				<td><span class="num-display" id="metadataSizeDisplay1"></span> bytes</td>
+				</tr>
+				<tr>
+					<th>Total size:</th>
+					<td><span class="num-display" id="cacheSizeDisplay2"></span> +
+						<span class="num-display" id="metadataSizeDisplay2"></span></td>
+					<td>=</td>
+					<td><span class="num-display" id="totalStorageDisplay"></span> bytes</td>
+				</tr>
+			</table>
+
+			<h2>Address bits</h2>
+
+			<table class="addr-display">
+				<tr id="addrByteRow">
+					<th class="addr-byte-cell">byte</th>
+					<td class="addr-byte-cell addr-tag-col"></td>
+					<td class="addr-byte-cell addr-row-col"></td>
+					<td class="addr-byte-cell addr-word-col"></td>
+					<td class="addr-byte-cell addr-byte-col"></td>
+				</tr>
+				<tr id="addrWordRow">
+					<th class="addr-word-cell">word</th>
+					<td class="addr-word-cell addr-tag-col"></td>
+					<td class="addr-word-cell addr-row-col"></td>
+					<td class="addr-word-cell addr-word-col"></td>
+					<td class="addr-byte-cell addr-byte-col"></td>
+				</tr>
+				<tr id="addrRowRow">
+					<th class="addr-row-cell">row</th>
+					<td class="addr-row-cell addr-tag-col"></td>
+					<td class="addr-row-cell addr-row-col"></td>
+					<td class="addr-word-cell addr-word-col"></td>
+					<td class="addr-byte-cell addr-byte-col"></td>
+				</tr>
+				<tr id="addrTagRow">
+					<th class="addr-tag-cell">tag</th>
+					<td class="addr-tag-cell addr-tag-col"></td>
+					<td class="addr-row-cell addr-row-col"></td>
+					<td class="addr-word-cell addr-word-col"></td>
+					<td class="addr-byte-cell addr-byte-col"></td>
+				</tr>
+				<tr>
+					<th>Address:</th>
+					<td class="addr-tag-cell  addr-tag-col"><span class="bit-display" id="addrTagDisplay">000000</span></td>
+					<td class="addr-row-cell  addr-row-col"><span class="bit-display" id="addrRowDisplay">0000</span></td>
+					<td class="addr-word-cell addr-word-col"><span class="bit-display" id="addrWordDisplay">00</span></td>
+					<td class="addr-byte-cell addr-byte-col"><span class="bit-display" id="addrByteDisplay">00</span></td>
+				</tr>
+			</table>
+		</section>
+
+		<section id="diagram">
+			<h2>Diagram</h2>
+
+			<p>Each cache block looks like this (data is shown as bytes):</p>
+
+			<table class="cache-block">
+				<tr>
+					<th class="valid-cell">V</th>
+					<th class="dirty-cell">D</th>
+					<th class="addr-tag-cell">Tag</th>
+					<th colspan="8" class="addr-word-cell">Data</th>
+				</tr>
+				<tr>
+					<td class="valid-cell bit-display">0</td>
+					<td class="dirty-cell bit-display">0</td>
+					<td class="addr-tag-cell bit-display">000000000000000000000000000000000</td>
+					<td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td><td class="addr-word-cell">
+						<table class="data-display">
+							<tr>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+								<td class="addr-byte-cell bit-display">00</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			</table>
+
+			<p>The overall cache organization looks like this. Valid/dirty bits omitted for size.
+			Note that the row indices are <strong>not</strong> stored in the cache!</p>
+
+			<table class="cache-org">
+				<thead>
+					<tr class="diagram-way-row">
+						<th class="diagram-row-col"></th>
+						<th class="diagram-row-col"></th>
+						<th class="diagram-way-header" colspan='9'>Ways</th>
+					</tr>
+					<tr class="diagram-way-row">
+						<th class="diagram-row-col"></th>
+						<th class="diagram-row-col"></th>
+						<th>0</th>
+						<th class="diagram-col-2">1</th>
+						<th class="diagram-col-3-4">2</th>
+						<th class="diagram-col-3-4">3</th>
+						<th class="diagram-ellipsis-col">&hellip;</th>
+						<th class="diagram-col-5-8 diagram-way-label">0</th>
+						<th class="diagram-col-5-8 diagram-way-label">0</th>
+						<th class="diagram-col-5-8 diagram-way-label">0</th>
+						<th class="diagram-col-5-8 diagram-way-label">0</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr><th class="diagram-row-col diagram-row-header" rowspan='9'>Rows</th>
+						<th class="diagram-row-col"> 0</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-2">
+						<th class="diagram-row-col"> 1</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-3-4">
+						<th class="diagram-row-col"> 2</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-3-4">
+						<th class="diagram-row-col"> 3</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-ellipsis-row">
+						<th class="diagram-row-col">&#x22ee;</th>
+						<td class="diagram-col-2">&#x22ee;</td>
+						<td class="diagram-col-3-4">&#x22ee;</td>
+						<td class="diagram-col-3-4">&#x22ee;</td>
+						<td>&#x22ee;</td><td class="diagram-ellipsis-col">&#x22f1;</td>
+						<td class="diagram-col-5-8">&#x22ee;</td>
+						<td class="diagram-col-5-8">&#x22ee;</td>
+						<td class="diagram-col-5-8">&#x22ee;</td>
+						<td class="diagram-col-5-8">&#x22ee;</td>
+					</tr>
+					<tr class="diagram-row-5-8">
+						<th class="diagram-row-col diagram-row-label">12</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-5-8">
+						<th class="diagram-row-col diagram-row-label">13</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-5-8">
+						<th class="diagram-row-col diagram-row-label">14</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+					<tr class="diagram-row-5-8">
+						<th class="diagram-row-col diagram-row-label">15</th>
+						<td><div></div></td>
+						<td class="diagram-col-2"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-col-3-4"><div></div></td>
+						<td class="diagram-ellipsis-col">&hellip;</td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+						<td class="diagram-col-5-8"><div></div></td>
+					</tr>
+				</tbody>
+			</table>
+		</section>
+	</main>
+</body>
+</html>
