@@ -1,0 +1,151 @@
+html, .ui-widget {
+	font-family: "Segoe UI", "Trebuchet MS", sans-serif;
+}
+
+html {
+	min-width: 1100px;
+	min-height: 1100px;
+}
+
+#parameters {
+	float: left;
+	width: 35em;
+}
+
+#storage-address {
+	float: left;
+	height: 28em;
+}
+
+#diagram {
+	clear: both;
+}
+
+table.cache-org {
+	text-align: center;
+}
+
+table.cache-org tbody th.diagram-row-header {
+	background-color: #AFA;
+}
+
+table.cache-org tbody td {
+	background-color: #AAF;
+	width: 4em;
+	height: 1.5em;
+	padding: 0;
+}
+
+table.cache-org tbody td div {
+	width: 30%;
+	height: 100%;
+	background-color: #FAA;
+}
+
+table.cache-org tbody td.diagram-ellipsis-col {
+	width: 1.5em;
+}
+
+.diagram-ellipsis-col, .diagram-ellipsis-row > * {
+	background-color: white !important;
+}
+
+.frac {
+	display: inline-block;
+	text-align: center;
+}
+
+.frac-denominator {
+	border-top: 2px solid black;
+}
+
+fieldset {
+	border: none;
+	padding: 0;
+	margin: 0;
+}
+
+table.data-display {
+	display: inline;
+}
+
+table.inputs {
+	width: 90%;
+}
+
+table.storage-display tr td:first-of-type {
+	text-align: right;
+}
+
+table.inputs th, table.storage-display th {
+	text-align: right;
+}
+
+table.inputs tr td:first-of-type {
+	text-align: center;
+	width: 6.8em;
+}
+
+table.inputs tr td[colspan='2'] {
+	text-align: left;
+}
+
+.big-num {
+	font-size: 150%;
+	font-weight: bold;
+}
+
+.big-num > sup {
+	vertical-align: 100%;
+	font-size: 70%;
+}
+
+.ui-spinner-input {
+	padding: 0;
+	text-align: center;
+}
+
+input[type="text"] {
+	width: 1.2em;
+}
+
+.num-display {
+	font-weight: bold;
+}
+
+.bit-display {
+	font-family: "Consolas", monospace;
+	font-weight: bold;
+}
+
+table.addr-display {
+	border-collapse: collapse;
+}
+
+.addr-byte-cell {
+	background-color: #FFA;
+}
+
+.addr-word-cell {
+	background-color: #AAF;
+}
+
+.addr-row-cell {
+	background-color: #AFA;
+}
+
+.addr-tag-cell {
+	background-color: #FAA;
+}
+
+table.cache-block {
+	text-align: center;
+}
+
+.valid-cell {
+	background-color: #AAA;
+}
+
+.dirty-cell {
+	background-color: #AAA;
+}
