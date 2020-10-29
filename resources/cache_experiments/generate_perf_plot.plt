@@ -4,7 +4,7 @@ set style line 1 lt rgb "red" lw 20 ps 5
 set style line 2 lt rgb "blue" lw 20 ps 5
 set style line 3 lt rgb "green" lw 20 ps 5
 set style line 4 lt rgb "purple" lw 20 ps 5
-set title "CPI (Cycles Per Instruction)" 
+set title "CPI" 
 set xlabel "Data structure size"
 set ylabel "CPI"
 set xrange [ * : * ] noreverse writeback

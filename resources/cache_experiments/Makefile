@@ -1,8 +1,8 @@
 TARGETS = linked-list linked-list_nodata array array_nodata
 
 GNUPLOT = /afs/cs.pitt.edu/courses/1541/gnuplot-5.2.8/bin/gnuplot
-CC = gcc
-COPT = -pthread -std=c99
+CC = g++
+COPT = -pthread
 LOPT = -pthread
 SIZES = 1 5 10 50 100 500 1000 5000 10000 50000 100000 500000 1000000 5000000 10000000
 #SIZES = 1 5 10 50 100 500 600 700 800 900 1000 1100 1200 1300 1400 1500 1600 1700 1800 1900 2000 5000 10000 50000 100000 500000 1000000 5000000 10000000
@@ -14,9 +14,6 @@ PLOTS := CPI.pdf MemStalls.pdf $(CACHE_PLOTS)
 all: $(TARGETS) $(PLOTS)
 
 .PRECIOUS: $(foreach target,$(TARGETS), $(target).cache.dat) $(PERF_DATA) $(CACHE_DATA)
-
-%.o: %.c
-	$(CC) $(COPT) -c $<
 
 CPI.pdf: CPI.dat generate_perf_plot.plt
 	$(GNUPLOT) -e "inputFile='$<'" -e "outputFile='$@'" generate_perf_plot.plt
@@ -36,14 +33,15 @@ MemStalls.dat: $(PERF_DATA) generate_memstalls_plot.py
 %.cache.dat: $(CACHE_DATA) generate_cachestats_plot.py
 	python generate_cachestats_plot.py -i outputs -o $@ -t $*
 
-linked-list: linked-list.o
+%.o: %.c
+	$(CC) $(COPT) -c $<
+
+define link_rules
+$(1): $(1).o
 	$(CC) $(LOPT) $^ -o $@
-linked-list_nodata: linked-list_nodata.o
-	$(CC) $(LOPT) $^ -o $@
-array: array.o
-	$(CC) $(LOPT) $^ -o $@
-array_nodata: array_nodata.o
-	$(CC) $(LOPT) $^ -o $@
+endef
+
+$(foreach target,$(TARGETS), $(eval $(call link_rules,$(target))))
 
 define perf_rules
 outputs/$(1).$(2).perf: $(1)
