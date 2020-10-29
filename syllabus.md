@@ -53,7 +53,7 @@ CS/COE 1541 Computer Architecture
 
 ## WEEK 8 (Week of 5 OCT)
 
-* Class 1: Superscalars and exceptions
+* Class 1: Superscalars
 
 * Class 2: Review for Midterm 1
 
@@ -65,33 +65,35 @@ CS/COE 1541 Computer Architecture
   
 ## WEEK 9 (Week of 12 OCT)
 
-* Class 1: Caching intro / Direct mapped caches / Set associative caches
+* Class 1: Exceptions and Midterm 1 discussion
 
-* Class 2: Cache performance and software optimizations
+* Class 2: The Memory Hierarchy
 
 * Project 1 due Oct. 13 at 5:00 PM on GradeScope
 
 ## WEEK 10 (Week of 19 OCT)
 
-* Class 1: Multiprocessor cache coherence
+* Class 1: The Memory Hierarchy (cont'd)
 
-* Class 2: Virtual Memory
+* Class 2: Introduction to caches
 
 ## WEEK 11 (Week of 26 OCT)
 
-* Class 1: Introduction to Parallel Processing (Chapter 6)
+* Class 1: Temporal vs. spatial Locality / Cold vs. capacity misses
 
-* Class 2: MIMD, SIMD and SMT architectures
+* Class 2: Direct mapped caches / Set associative caches
+
+* Homework 3 released due Nov. 12 at 5:00 PM on GradeScope
 
 ## WEEK 12 (Week of 2 NOV)
 
-* Class 1: Programming shared memory systems
+* Class 1: Write back vs write through caches / Private vs. shared caches
 
-* Class 2: GPU architecture and programming
+* Class 2: MIMD, SIMD and SMT architectures
 
 ## WEEK 13 (Week of 9 NOV)
 
-* Class 1: GPU architecture and programming (cont'd)
+* Class 1: GPU architecture and programming
 
 * Class 2: GPU architecture and programming (cont'd)
 
