@@ -13,6 +13,8 @@ PLOTS := CPI.pdf MemStalls.pdf $(CACHE_PLOTS)
 
 all: $(TARGETS) $(PLOTS)
 
+build: $(TARGETS)
+
 .PRECIOUS: $(foreach target,$(TARGETS), $(target).cache.dat) $(PERF_DATA) $(CACHE_DATA)
 
 CPI.pdf: CPI.dat generate_perf_plot.plt
@@ -38,7 +40,7 @@ MemStalls.dat: $(PERF_DATA) generate_memstalls_plot.py
 
 define link_rules
 $(1): $(1).o
-	$(CC) $(LOPT) $^ -o $@
+	$(CC) $(LOPT) $$^ -o $$@
 endef
 
 $(foreach target,$(TARGETS), $(eval $(call link_rules,$(target))))
