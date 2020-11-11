@@ -83,16 +83,23 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classCacheLine-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">CacheLine Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A cache line (a.k.a cache block).  
+ <a href="classCacheLine.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="CacheLine_8h_source.html">CacheLine.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af686e4ecae8cc8fbc143d9ee977498a5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af686e4ecae8cc8fbc143d9ee977498a5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
+<tr class="memitem:a7fcd0784f096f49c5f0305c00e2469fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#a7fcd0784f096f49c5f0305c00e2469fa">CacheLine</a> ()</td></tr>
+<tr class="separator:a7fcd0784f096f49c5f0305c00e2469fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af686e4ecae8cc8fbc143d9ee977498a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#af686e4ecae8cc8fbc143d9ee977498a5">initialize</a> ()</td></tr>
 <tr class="separator:af686e4ecae8cc8fbc143d9ee977498a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae649260db70bcfce2cfc2d661e7c1217"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae649260db70bcfce2cfc2d661e7c1217"></a>
 uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>getTag</b> () const </td></tr>
@@ -121,10 +128,182 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>incAge</b> ()</td></t
 <tr class="memitem:a23dfc473254689172ebeb31eba83cfbb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23dfc473254689172ebeb31eba83cfbb"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>resetAge</b> ()</td></tr>
 <tr class="separator:a23dfc473254689172ebeb31eba83cfbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac1351e3d4e45e9d497579287addde52a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac1351e3d4e45e9d497579287addde52a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>toString</b> ()</td></tr>
+<tr class="memitem:ac1351e3d4e45e9d497579287addde52a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#ac1351e3d4e45e9d497579287addde52a">toString</a> ()</td></tr>
 <tr class="separator:ac1351e3d4e45e9d497579287addde52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:a901e846810707438e7d13b317ea4ffaf"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#a901e846810707438e7d13b317ea4ffaf">tag</a></td></tr>
+<tr class="separator:a901e846810707438e7d13b317ea4ffaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f69c4431f8864ebb6d83d045e61ef36"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#a8f69c4431f8864ebb6d83d045e61ef36">valid</a></td></tr>
+<tr class="separator:a8f69c4431f8864ebb6d83d045e61ef36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c293b23e3a2518337c11d733b9eeac1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#a5c293b23e3a2518337c11d733b9eeac1">dirty</a></td></tr>
+<tr class="separator:a5c293b23e3a2518337c11d733b9eeac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe57bb750b7e997c768524efb91f29e8"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCacheLine.html#abe57bb750b7e997c768524efb91f29e8">age</a></td></tr>
+<tr class="separator:abe57bb750b7e997c768524efb91f29e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A cache line (a.k.a cache block). </p>
+<p>Contains a tag, valid bit, dirty bit (for write-back caches), and age (for LRU cache block replacement). </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a7fcd0784f096f49c5f0305c00e2469fa"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">CacheLine::CacheLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Constructor. Initializes block. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="af686e4ecae8cc8fbc143d9ee977498a5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CacheLine::initialize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Clears cache block for new allocation </p>
+
+</div>
+</div>
+<a class="anchor" id="ac1351e3d4e45e9d497579287addde52a"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string CacheLine::toString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Returns string representation of the cache block. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="abe57bb750b7e997c768524efb91f29e8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t CacheLine::age</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Age (32 bits in the counter, which is unrealistic but...) </p>
+
+</div>
+</div>
+<a class="anchor" id="a5c293b23e3a2518337c11d733b9eeac1"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CacheLine::dirty</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Dirty bit </p>
+
+</div>
+</div>
+<a class="anchor" id="a901e846810707438e7d13b317ea4ffaf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t CacheLine::tag</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Tag for cache block </p>
+
+</div>
+</div>
+<a class="anchor" id="a8f69c4431f8864ebb6d83d045e61ef36"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CacheLine::valid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Valid bit </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>/afs/pitt.edu/home/w/a/wahn/teaching/cs1541/CS1541_Fall2020/projects/2/<a class="el" href="CacheLine_8h_source.html">CacheLine.h</a></li>
 </ul>
