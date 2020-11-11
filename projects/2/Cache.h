@@ -73,7 +73,7 @@ class Cache: public MemObj
     std::string getContentString() const;
 };
 
-/** @brief A write back cache.
+/** @brief <B>TODO</B>: A write back cache.
  *
  * On a write request, it marks the cache block dirty and only writes back
  * the dirty block to lower level memory on displacements.  On a write miss,
@@ -125,7 +125,7 @@ class WBCache : public Cache {
     std::string getWritePolicy() const { return "WB"; }
 };
 
-/** @brief A write through cache.
+/** @brief <B>TODO</B>: A write through cache.
  *
  * On a write request, it updates the cache block if it is a hit.  If it is
  * a miss, then no block is allocated (no write allocate).  Regardless of
