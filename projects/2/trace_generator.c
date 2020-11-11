@@ -1,30 +1,26 @@
-/**************************************************************/
-/* CS/COE 1541				 			
-This program allows the user to interactively input the instructions for a trace 
-and produce a trace file with these instructions readable by five_stage.c.
-The program takes the name of the file to be generated as an argument.
-***************************************************************/
+/** Code by @author Wonsun Ahn
+ * 
+ * Utility program to generate a trace file of your own.  Takes as argument the
+ * name of the file.
+ */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <inttypes.h>
 #include <arpa/inet.h>
 #include "CPU.h" 
+#include "trace.h" 
 
 int main(int argc, char **argv)
 {
-  struct instruction *tr_entry=malloc(sizeof(struct instruction));
+  instruction *tr_entry = (instruction *) malloc(sizeof(instruction));
   size_t size;
   char *trace_file_name;
+  dynamic_inst dinst = {0};
   
-  unsigned char t_type ;
   unsigned int t_sReg_a;
   unsigned int t_sReg_b;
   unsigned int t_dReg;
-  unsigned int t_PC ;
-  unsigned int t_Addr ;
-
-  unsigned int cycle_number = 0;
 
   if (argc == 1) {
     fprintf(stdout, "\nMissing argument: the name of the file to be generated\n");
@@ -32,7 +28,6 @@ int main(int argc, char **argv)
   }
   trace_file_name = argv[1];
   fopen(trace_file_name, "w");
-  int check;
   int trcount, i, repeat;
   char itype ;
 
@@ -53,12 +48,13 @@ int main(int argc, char **argv)
     tr_entry->dReg = (char) t_dReg;
 
     repeat = 0 ;
-    if(itype == 'R') {tr_entry->type = ti_RTYPE ;} 
-      else if (itype == 'L') {tr_entry->type = ti_LOAD;} 
-      else if (itype == 'S') {tr_entry->type = ti_STORE;} 
-      else if (itype == 'B') {tr_entry->type = ti_BRANCH ;} 
-      else if (itype == 'N') {tr_entry->type = ti_NOP ;}
-      else {printf("unrecognized instruction type -- try again ") ; repeat = 1;  i-- ; }
+    if(itype == 'R') {tr_entry->type = ti_RTYPE ;}
+    else if(itype == 'I') {tr_entry->type = ti_ITYPE ;}
+    else if (itype == 'L') {tr_entry->type = ti_LOAD;}
+    else if (itype == 'S') {tr_entry->type = ti_STORE;}
+    else if (itype == 'B') {tr_entry->type = ti_BRANCH ;}
+    else if (itype == 'N') {tr_entry->type = ti_NOP ;}
+    else {printf("unrecognized instruction type -- try again ") ; repeat = 1;  i-- ; }
 
     //write the instruction into the trace file
     if (repeat == 0) write_trace(*tr_entry, trace_file_name);
@@ -73,27 +69,10 @@ int main(int argc, char **argv)
       break; 
 
     // Display the generated trace 
-    switch(tr_entry->type) {
-        case ti_NOP:
-          printf("NOP: \n") ;
-          break;
-        case ti_RTYPE: /* registers are translated for printing by subtracting offset  */
-          printf("RTYPE: ");
-		  printf("(PC: %d)(sReg_a: %d)(sReg_b: %d)(dReg: %d) \n", tr_entry->PC, tr_entry->sReg_a, tr_entry->sReg_b, tr_entry->dReg);
-          break;
-        case ti_LOAD:      
-          printf("LOAD: ");
-		  printf("(PC: %d)(sReg_a: %d)(dReg: %d)(addr: %d)\n", tr_entry->PC, tr_entry->sReg_a, tr_entry->dReg, tr_entry->Addr);
-          break;
-        case ti_STORE:    
-          printf("STORE: ");
-		  printf("(PC: %d)(sReg_a: %d)(sReg_b: %d)(addr: %d)\n", tr_entry->PC, tr_entry->sReg_a, tr_entry->sReg_b, tr_entry->Addr);
-          break;
-        case ti_BRANCH:
-          printf("BRANCH: ");
-		  printf("(PC: %d)(sReg_a: %d)(sReg_b: %d)(addr: %d)\n", tr_entry->PC, tr_entry->sReg_a, tr_entry->sReg_b, tr_entry->Addr);
-          break;
-    }
+    dinst.seq++;
+    dinst.inst = *tr_entry;
+
+    printf("%s\n", get_instruction_string(dinst, LONG_FORM));
   }
 
   trace_uninit();
