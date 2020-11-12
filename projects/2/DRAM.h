@@ -42,7 +42,7 @@ class DRAM : public MemObj
      *
      * @param mreq - The memory request
      */
-    virtual void access(MemRequest *mreq) {
+    void access(MemRequest *mreq) {
       mreq->addLatency(hitDelay);
 
       if(verbose) {
@@ -72,7 +72,7 @@ class DRAM : public MemObj
     }
 
     /** Returns a string that describes the DRAM */
-    virtual std::string toString() const {
+    std::string toString() const {
       std::string ret;
       ret += "[" + getName() + "]\n";
       ret += "device type = dram\n";

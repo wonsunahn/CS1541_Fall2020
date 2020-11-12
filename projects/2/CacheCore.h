@@ -85,7 +85,7 @@ class CacheCore {
     virtual ~CacheCore();
 
     /** Returns a string that describes the cache */
-    virtual std::string toString() {
+    std::string toString() {
       std::string ret;
       ret += "capacity = " + std::to_string(getSize()) + "\n";
       ret += "block size = " + std::to_string(getLineSize()) + "\n";
@@ -94,7 +94,7 @@ class CacheCore {
     }
 
     /** Returns a string that dumps all valid lines in cache */
-    virtual std::string getContentString() {
+    std::string getContentString() {
       std::string ret;
       for(uint32_t i = 0; i < getNumLines(); i++) {
         if(content[i].isValid()) {

@@ -1,4 +1,4 @@
-- [CS/COE 1541 - Introduction to Computer Architecture](#cs-coe-1541---introduction-to-computer-architecture)
+- [CS/COE 1541 - Introduction to Computer Architecture](#cscoe-1541---introduction-to-computer-architecture)
 - [Introduction](#introduction)
   * [Description](#description)
   * [Processor Design](#processor-design)
@@ -11,8 +11,8 @@
   * [Configuration Files](#configuration-files)
   * [Trace Files](#trace-files)
 - [Your Tasks](#your-tasks)
-  * [Task 1: Implement the Cache Block Array](#task-1--implement-the-cache-block-array)
-  * [Task 2: Implement the Write-back and Write-through Caches](#task-2--implement-the-write-back-and-write-through-caches)
+  * [Task 1: Implement the Cache Block Array](#task-1-implement-the-cache-block-array)
+  * [Task 2: Implement the Write-back and Write-through Caches](#task-2-implement-the-write-back-and-write-through-caches)
   * [Source Code](#source-code)
   * [Submission](#submission)
 - [Resources](#resources)
@@ -89,7 +89,7 @@ https://www.technology.pitt.edu/help-desk/how-to-documents/pittnet-vpn-pulse-sec
    ```
    This shows your quota in KBs.  The above shows 2.5 GBs.  This project will require at least 50 MBs of disk space.  If you don't have that much remaining please contact my.pitt.edu to increase it.  By default, students are given a paltry 5 MBs of space so it is likely that you don't have the space.  I have been told that you can be given up to 2 GBs of space if you ask for it.  The fastest way to contact my.pitt.edu is through the **live chat** on the website.  It should just take a minute or two.
 
-The project files are within the directory /afs/cs.pitt.edu/courses/1541/project1 once you are logged in to linux.cs.pitt.edu.  Identical files are also on this GitHub folder.  Copy the project files to a working directory of your choice and cd into that directory.
+The project files are within the directory /afs/cs.pitt.edu/courses/1541/project2 once you are logged in to linux.cs.pitt.edu.  Identical files are also on this GitHub folder.  Copy the project files to a working directory of your choice and cd into that directory.
 
 ## Directory Structure and Makefile Script
 
@@ -392,8 +392,10 @@ Memory:readHits=2:writeHits=0
 ```
 
 There are a few invariants here:
+
 * L2Cache hits = DL1Cache misses + IL1Cache misses
 * Memory hits = L2Cache misses
+
 Make sure they hold in your code too.
 
 And then some final statistics:
@@ -599,29 +601,29 @@ differences with Java:
 
 1. Inheritance
 
-The syntax for inheritance is:
+   The syntax for inheritance is:
 
-```
-class Cache: public MemObj
-```
+   ```
+   class Cache: public MemObj
+   ```
 
-This means that Cache inherits from the MemObj class.  The 'public' specifier
+   This means that Cache inherits from the MemObj class.  The 'public' specifier
 means that public members in MemObj remain public in Cache.
 
 1. Overriding Methods and Abstract Methods
 
-In C++, you may often see the 'virtual' keyword before a function:
+   In C++, you may often see the 'virtual' keyword before a function:
 
-```
-virtual void read(MemRequest *mreq) = 0;
-```
+   ```
+   virtual void read(MemRequest *mreq) = 0;
+   ```
 
-Unlike Java, if you want to override a method in the child class, you have to
+   Unlike Java, if you want to override a method in the child class, you have to
 declare it as 'virtual' in the parent class.  The above method is declared as
 part of the Cache class and it is declared as virtual because it is overriden
 in the children classes WBCache and WTCache.
 
-In addition, the ' = 0;' notation says that, this method is an *abstract
+   In addition, the ' = 0;' notation says that, this method is an *abstract
 method*.  An abstract method is a method with no implementation.  So it's much
 like an interface in Java in spirit.  Any class with an abstract method that is
 not overriden is called an *abstract class* and objects cannot be instantiated
@@ -630,18 +632,18 @@ Java.  So you cannot create a Cache object in this case.
 
 1. Creating and Freeing Objects
 
-Creating objects in C++ is almost identical to Java: you use the 'new' keyword.
+   Creating objects in C++ is almost identical to Java: you use the 'new' keyword.
 The key difference is in freeing of objects.  Java does automatic garbage
 collection.  With C++, the programmer has to manually free the object using the
 'delete' keyword:
 
-```
-mreq = new MemRequest(dinst.inst.Addr, MemRead);
-...
-delete mreq;
-```
+   ```
+   mreq = new MemRequest(dinst.inst.Addr, MemRead);
+   ...
+   delete mreq;
+   ```
 
-As you can see in the above code in CPU.c, you have to delete every object you
+   As you can see in the above code in CPU.c, you have to delete every object you
 create using 'new' or else you will have a memory leak.
 
 As with C programs, you can use
