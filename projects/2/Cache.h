@@ -53,7 +53,10 @@ class Cache: public MemObj
      *
      * @param name - The name of the cache object on the config file.
      */
-    Cache(const char *name); virtual ~Cache();
+    Cache(const char *name);
+    
+    /** Destructor. */
+    virtual ~Cache();
 
     /** Returns the write policy, either "WB" or "WT" */
     virtual std::string getWritePolicy() const = 0;

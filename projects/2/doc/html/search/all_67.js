@@ -2,7 +2,7 @@ var searchData=
 [
   ['getaddr',['getAddr',['../classMemRequest.html#a69435ea46ba0966cbae6a8f140fcf66e',1,'MemRequest']]],
   ['getassoc',['getAssoc',['../classCacheCore.html#ab22695556299c635a1d67d8367129fe4',1,'CacheCore']]],
-  ['getcontentstring',['getContentString',['../classCache.html#a22fdc84b36d23957547672a0d9ea1b4f',1,'Cache::getContentString()'],['../classCacheCore.html#a3340caf1814c6f5530d837acd9a6ad3f',1,'CacheCore::getContentString()'],['../classDRAM.html#a510801e739dba2461b492655a015bb46',1,'DRAM::getContentString()'],['../classMemObj.html#a88f7f43b5554cd51b8d2d86eafeb5321',1,'MemObj::getContentString()']]],
+  ['getcontentstring',['getContentString',['../classCache.html#a22fdc84b36d23957547672a0d9ea1b4f',1,'Cache::getContentString()'],['../classCacheCore.html#ac866d6002e2dd7ed974b32d91b97d69e',1,'CacheCore::getContentString()'],['../classDRAM.html#a510801e739dba2461b492655a015bb46',1,'DRAM::getContentString()'],['../classMemObj.html#a88f7f43b5554cd51b8d2d86eafeb5321',1,'MemObj::getContentString()']]],
   ['getlatency',['getLatency',['../classMemRequest.html#af4cd10c97005cc334fdd7982f93fd673',1,'MemRequest']]],
   ['getlinesize',['getLineSize',['../classCacheCore.html#a366ce444a5eab8c771d0caca9b89c5ce',1,'CacheCore']]],
   ['getlowerlevel',['getLowerLevel',['../classMemObj.html#ae393e5cd368bf749453bebba3da4c987',1,'MemObj']]],
