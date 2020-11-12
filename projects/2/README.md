@@ -89,7 +89,7 @@ https://www.technology.pitt.edu/help-desk/how-to-documents/pittnet-vpn-pulse-sec
    ```
    This shows your quota in KBs.  The above shows 2.5 GBs.  This project will require at least 50 MBs of disk space.  If you don't have that much remaining please contact my.pitt.edu to increase it.  By default, students are given a paltry 5 MBs of space so it is likely that you don't have the space.  I have been told that you can be given up to 2 GBs of space if you ask for it.  The fastest way to contact my.pitt.edu is through the **live chat** on the website.  It should just take a minute or two.
 
-The project files are within the directory /afs/cs.pitt.edu/courses/1541/project1 once you are logged in to linux.cs.pitt.edu.  Identical files are also on this GitHub folder.  Copy the project files to a working directory of your choice and cd into that directory.
+The project files are within the directory /afs/cs.pitt.edu/courses/1541/project2 once you are logged in to linux.cs.pitt.edu.  Identical files are also on this GitHub folder.  Copy the project files to a working directory of your choice and cd into that directory.
 
 ## Directory Structure and Makefile Script
 
