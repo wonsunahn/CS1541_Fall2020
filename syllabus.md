@@ -112,7 +112,7 @@ CS/COE 1541 Computer Architecture
   * Session will be recorded
 
 * Midterm 2 on GradeScope: Sunday (Nov. 29) 11:59 AM - Tuesday (Dec. 1) 11:59 PM
-  * Will be posted as link named "Midterm 2" at Friday 10:00 AM
+  * Will be posted as link named "Midterm 2" at Sunday 11:59 AM
   * You will choose a 3 hour span to complete exam within the above 2-day period
   * Your 3 hours begin the moment you click on link and agree to the terms on the next screen
   * Open book but individual work
