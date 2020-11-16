@@ -81,26 +81,42 @@ CS/COE 1541 Computer Architecture
 
 * Class 1: Temporal vs. spatial Locality / Cold vs. capacity misses
 
-* Class 2: Direct mapped caches / Set associative caches
+* Class 2: Evaluating cache design and AMAT / Cache block size
 
 * Homework 3 released due Nov. 12 at 5:00 PM on GradeScope
 
 ## WEEK 12 (Week of 2 NOV)
 
-* Class 1: Write back vs write through caches / Private vs. shared caches
+* Class 1: Direct mapped caches / Set associative caches
 
-* Class 2: MIMD, SIMD and SMT architectures
+* Class 2: Write back vs write through caches
 
 ## WEEK 13 (Week of 9 NOV)
 
-* Class 1: GPU architecture and programming
+* Class 3: Split vs. unified caches / Private vs. shared caches / Prefetching
 
-* Class 2: GPU architecture and programming (cont'd)
+* Class 2: Virtual Memory / TLBs
+
+* Project 2 released due Dec. 4 at 11:59 PM on GradeScope
 
 ## WEEK 14 (Week of 16 NOV)
 
-* Class 1: Midterm 2 review
+* Class 1: Cache Coherence / SIMD
 
-* Class 2: Midterm 2 on GradeScope
-  * Take home exam submitted online
+* Class 2: GPU architecture and programming
+  
+## WEEK 15 (Week of 23 NOV)
+
+* Thursday (Nov. 26) 5:00 - 6:15
+  * Midterm 2 review
+  * Session will be recorded
+
+* Midterm 2 on GradeScope: Sunday (Nov. 29) 11:59 AM - Tuesday (Dec. 1) 11:59 PM
+  * Will be posted as link named "Midterm 2" at Friday 10:00 AM
+  * You will choose a 3 hour span to complete exam within the above 2-day period
+  * Your 3 hours begin the moment you click on link and agree to the terms on the next screen
   * Open book but individual work
+  
+## WEEK 16 (Week of 30 NOV)
+
+* Project 2 due Dec. 4 at 11:59 PM on GradeScope
