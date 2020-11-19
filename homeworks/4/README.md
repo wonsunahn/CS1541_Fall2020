@@ -29,9 +29,12 @@ GPUs that I rented out from the department.  The hostnames of these machines are
 You need to log in to one of these machines to do the work.
 
 1. If you haven't already, install Pulse VPN Desktop Client.  Instructions on how to download and use:
-https://www.technology.pitt.edu/services/pittnet-vpn-pulse-secure
-Then, set up the VPN client and connect to Pitt VPN  as follows:
-https://www.technology.pitt.edu/help-desk/how-to-documents/pittnet-vpn-pulse-secure-connect-pulse-secure-client
+
+   https://www.technology.pitt.edu/services/pittnet-vpn-pulse-secure
+
+   Then, set up the VPN client and connect to Pitt VPN  as follows:
+
+   https://www.technology.pitt.edu/help-desk/how-to-documents/pittnet-vpn-pulse-secure-connect-pulse-secure-client
 
 2. Most OSes (Windows, MacOS, Linux) comes with built-in SSH clients accessible using this simple command on your commandline shell:
    ```
