@@ -64,7 +64,8 @@ Here is an overview of the directory structure:
 
 ```
 # Source code you will be **modifying**.
-mat_mul_gpu.cu: Matrix multiplication program that can perform the multiplication on either: Policy 1 - the CPU, Policy 2 - the GPU, and Policy 3 - the GPU using shared memory.
+mat_mul_gpu.cu: Matrix multiplication program that can perform the multiplication on either:
+Policy 1 - the CPU, Policy 2 - the GPU, and Policy 3 - the GPU using shared memory.
 
 # Other scripts and directories
 Makefile : The build script for the Make tool.
