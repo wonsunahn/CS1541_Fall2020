@@ -38,7 +38,7 @@ You need to log in to one of these machines to do the work.
 
 2. Most OSes (Windows, MacOS, Linux) comes with built-in SSH clients accessible using this simple command on your commandline shell:
    ```
-   ssh USERNAME@linux.cs.pitt.edu
+   ssh USERNAME@pc6110-e1.cs.pitt.edu.cs.pitt.edu
    ```
    If you want a more fancy SSH client, you can download Putty, a free open source terminal:
    https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
