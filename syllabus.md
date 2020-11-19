@@ -107,7 +107,7 @@ CS/COE 1541 Computer Architecture
   
 ## WEEK 15 (Week of 23 NOV)
 
-* Thursday (Nov. 26) 5:00 - 6:15
+* Tuesday (Nov. 24) 5:00 - 6:15
   * Midterm 2 review
   * Session will be recorded
 
