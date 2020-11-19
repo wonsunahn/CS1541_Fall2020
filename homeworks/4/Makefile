@@ -14,8 +14,8 @@ export LD_LIBRARY_PATH=$(LIBQT5)
 POLICIES = 1 2 3
 MATMUL_BLOCK_SIZES = 4 8 16 32 
 MATMUL_DATA := $(foreach policy,$(POLICIES),$(foreach size, $(MATMUL_BLOCK_SIZES), outputs/mat_mul_gpu.$(policy).$(size).perf))
-MATMUL_OUTPUTS := $(foreach policy,1 2,$(foreach size, $(MATMUL_BLOCK_SIZES), outputs/mat_mul_gpu.$(policy).$(size).out))
-MATMUL_DIFFS := $(foreach size, $(MATMUL_BLOCK_SIZES), diffs/mat_mul_gpu.$(size).diff)
+MATMUL_OUTPUTS := $(foreach policy,1 2 3,$(foreach size, $(MATMUL_BLOCK_SIZES), outputs/mat_mul_gpu.$(policy).$(size).out))
+MATMUL_DIFFS := $(foreach policy,2 3,$(foreach size, $(MATMUL_BLOCK_SIZES), diffs/mat_mul_gpu.$(policy).$(size).diff))
 PLOTS := MatMulTime.pdf 
 
 all: build diffs plots
@@ -63,18 +63,18 @@ endef
 $(foreach size, $(MATMUL_BLOCK_SIZES), $(eval $(call matmul_cpu_output_rules,$(size))))
 
 define matmul_gpu_output_rules
-outputs/mat_mul_gpu.2.$(1).out: mat_mul_gpu
-	./mat_mul_gpu 1024 $(1) 2 debug > $$@
+outputs/mat_mul_gpu.$(1).$(2).out: mat_mul_gpu
+	./mat_mul_gpu 1024 $(2) $(1) debug > $$@
 endef
 
-$(foreach size, $(MATMUL_BLOCK_SIZES), $(eval $(call matmul_gpu_output_rules,$(size))))
+$(foreach policy,2 3,$(foreach size, $(MATMUL_BLOCK_SIZES), $(eval $(call matmul_gpu_output_rules,$(policy),$(size)))))
 
 define matmul_diff_rules
-diffs/mat_mul_gpu.$(1).diff: outputs/mat_mul_gpu.1.$(1).out outputs/mat_mul_gpu.2.$(1).out mat_mul_gpu
-	-python diff.py outputs/mat_mul_gpu.1.$(1).out outputs/mat_mul_gpu.2.$(1).out > $$@
+diffs/mat_mul_gpu.$(1).$(2).diff: outputs/mat_mul_gpu.1.$(2).out outputs/mat_mul_gpu.$(1).$(2).out mat_mul_gpu
+	-python diff.py outputs/mat_mul_gpu.1.$(2).out outputs/mat_mul_gpu.$(1).$(2).out > $$@
 endef
 
-$(foreach size, $(MATMUL_BLOCK_SIZES), $(eval $(call matmul_diff_rules,$(size))))
+$(foreach policy,2 3,$(foreach size, $(MATMUL_BLOCK_SIZES), $(eval $(call matmul_diff_rules,$(policy),$(size)))))
 
 clean:
 	rm -f $(TARGETS) $(PLOTS) $(MATMUL_DATA) $(MATMUL_OUTPUTS) $(MATMUL_DIFFS)
