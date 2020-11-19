@@ -1,7 +1,7 @@
 # CS/COE 1541 - Introduction to Computer Architecture
 Fall Semester 2020 - Homework 4
 
-* Source Code DUE: Dec 4 (Friday), 2020 11:59 PM
+* DUE: Dec 4 (Friday), 2020 11:59 PM
 
 # Introduction
 
@@ -188,7 +188,7 @@ https://en.wikipedia.org/wiki/Loop_nest_optimization#Example:_matrix_multiplicat
 
 Open the generated MatMulTime.pdf plot and observe that you see big speedups like in this plot:
 
-<img alt="Code Coverage" src=MatMultTime_Solution.pdf width=700>
+<img alt="Code Coverage" src=MatMultTime_Solution.png width=700>
 
 ## Submission
 
