@@ -55,7 +55,7 @@ __global__ void mm_gpu_shared(float* C, float* A, float* B, int n)
 	float *Bs = &As[block_size * block_size];
 
 	// TODO:
-	// For EXTRA CREDIT, Implement GPU matrix multiplication using tiling and the above allocated shared memory as described in:
+	// Implement GPU matrix multiplication using tiling and the above allocated shared memory as described in:
 	// https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
 
 }
@@ -194,7 +194,7 @@ int main(int argc, char** argv)
                 dim3 dimGrid(N / dimBlock.x, N / dimBlock.y);
 		// Additional 3rd parameter "sizeof(float) * block_size * block_size * 2" is used to specify how much shared memory to allocate for a thread block.
 		// It's needed because we want to dynamically allocate shared memory according to the given thread block size.
-		mm_cuda_shared <<<dimGrid, dimBlock, sizeof(float) * block_size * block_size * 2>>> (d_C, d_A, d_B, N);
+		mm_gpu_shared <<<dimGrid, dimBlock, sizeof(float) * block_size * block_size * 2>>> (d_C, d_A, d_B, N);
 
 		gpuErrchk( cudaPeekAtLastError() );
 		gpuErrchk( cudaDeviceSynchronize() );
