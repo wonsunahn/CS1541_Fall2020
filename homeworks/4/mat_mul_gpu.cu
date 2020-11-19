@@ -26,7 +26,7 @@ void mm_cpu(float* C, const float* A, const float* B, int n) {
 				C[i*n + j] += A[i*n + k] * B[k*n + j];
 			}
 		}
-	}	
+	}
 }
 
 /////////////////////////////////////////////////////////////////////////
