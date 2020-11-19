@@ -166,8 +166,8 @@ For example, if you see the following:
 Diff success!
 ```
 
-Then you've done a good job.  Again, don't forget to remove the spurious printf
-or the diff will always give you a failure.
+Then you've done a good job.  The diff files named mat_mul_gpu.2.*.diff are the result of diffing Policy 2 (mm_gpu) against Policy 1 (mm_cpu).
+Again, don't forget to remove the spurious printf or the diff will always give you a failure.
 
 ## Task 3: Implement the optimized GPU matrix multiply (mm_gpu_shared)
 
@@ -187,6 +187,17 @@ where threads try to read a shared memory that is not yet filled.
 
 If you want to learn more about loop tiling, please read the wikipedia page:
 https://en.wikipedia.org/wiki/Loop_nest_optimization#Example:_matrix_multiplication
+
+If you've done your job, the diffs for Policy 3 should also pass.
+
+For example, if you see the following:
+
+```
+[wahn@pc6110-e1 4]$ cat diffs/mat_mul_gpu.3.32.diff
+Diff success!
+```
+
+Then you've done a good job.  The diff files named mat_mul_gpu.3.*.diff are the result of diffing Policy 3 (mm_gpu_shared) against Policy 1 (mm_cpu).
 
 ## Task 4: Check your performance!
 
