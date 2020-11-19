@@ -13,7 +13,12 @@ def getFloats(fileName):
   cols = l.split()
   floats = []
   for col in cols:
-    floats.append(float(col))
+    try: 
+      floats.append(float(col))
+    except:
+      print "Diff failure!"
+      print fileName + " contains spurious output other than the matrix elements."
+      sys.exit(-1)
   f.close
   return floats
 
