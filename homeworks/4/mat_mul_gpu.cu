@@ -36,6 +36,8 @@ __global__ void mm_gpu(float* C, float* A, float* B, int n)
 {
 	// TODO:
 	// Implement the naive GPU matrix multiplication shown on the lecture slides.
+	// Remove the printf below when you don't need it.  It's just for demonstration.
+	printf("Grid(%d, %d) Block (%d, %d)\n", blockIdx.x, blockIdx.y, threadIdx.x, threadIdx.y);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -57,7 +59,6 @@ __global__ void mm_gpu_shared(float* C, float* A, float* B, int n)
 	// TODO:
 	// Implement GPU matrix multiplication using tiling and the above allocated shared memory as described in:
 	// https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
-
 }
 
 /////////////////////////////////////////////////////////////////////////
