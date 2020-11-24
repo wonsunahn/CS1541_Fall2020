@@ -104,7 +104,9 @@ CS/COE 1541 Computer Architecture
 * Class 1: Cache Coherence / SIMD
 
 * Class 2: GPU architecture and programming
-  
+
+* Homework 4 released due Dec. 4 at 11:59 PM on GradeScope
+
 ## WEEK 15 (Week of 23 NOV)
 
 * Tuesday (Nov. 24) 5:00 - 6:15
@@ -118,5 +120,7 @@ CS/COE 1541 Computer Architecture
   * Open book but individual work
   
 ## WEEK 16 (Week of 30 NOV)
+
+* Homework 4 due Dec. 4 at 11:59 PM on GradeScope
 
 * Project 2 due Dec. 4 at 11:59 PM on GradeScope
