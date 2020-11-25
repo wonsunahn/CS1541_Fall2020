@@ -207,9 +207,11 @@ Open the generated MatMulTime.pdf plot and observe that you see big speedups lik
 
 ## Submission
 
-You will do one submission for this homework to the GradeScope "Homework 4" link.  Since the GradeScope machines
+You will do one submission for this homework to the GradeScope "Homework 4" link.  Since the GradeScope machines do not have GPUs it will not be autograded, but it will be graded manually according to the rubric explained on the GradeScope assignment.
 
 # Resources
 
-* NVIDIA tutorial on how to use shared memory for matrix multiplication:
-https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
+* identical 3 policies but for the matrix vector multiplication I showed on the alides:
+  [resources/gpu_experiments/mat_vec_gpu.cu](resources/gpu_experiments/mat_vec_gpu.cu)
+* NVIDIA guide on how to use shared memory for matrix multiplication:
+  https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
