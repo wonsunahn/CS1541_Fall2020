@@ -212,6 +212,6 @@ You will do one submission for this homework to the GradeScope "Homework 4" link
 # Resources
 
 * identical 3 policies but for the matrix vector multiplication I showed on the alides:
-  [resources/gpu_experiments/mat_vec_gpu.cu](resources/gpu_experiments/mat_vec_gpu.cu)
+  [/resources/gpu_experiments/mat_vec_gpu.cu](/resources/gpu_experiments/mat_vec_gpu.cu)
 * NVIDIA guide on how to use shared memory for matrix multiplication:
   https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
