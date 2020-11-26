@@ -50,15 +50,22 @@ __global__ void mm_gpu_shared(float* C, float* A, float* B, int n)
 	// We needed to allocate dynamic shared memory because the block size is unknown ahead of time.
         // This looks strange but if you read the below NVIDIA blog entry, it will make sense:
 	// https://developer.nvidia.com/blog/using-shared-memory-cuda-cc/
-        // This is equivalent to the below static shared memory declarations (but it won't work because of bock_size).
-	// __shared__ float As[block_size][block_size];
-	// __shared__ float Bs[block_size][block_size];
+        // This is equivalent to the below static shared memory declarations (but it won't work because of block_size).
+	// __shared__ float As[block_size * block_size];
+	// __shared__ float Bs[block_size * block_size];
 	extern __shared__ float As[];
 	float *Bs = &As[block_size * block_size];
 
 	// TODO:
-	// Implement GPU matrix multiplication using tiling and the above allocated shared memory as described in:
+	// Implement GPU matrix multiplication using tiling and the above allocated shared memory.
+	
+	// For reference, you can look at the following 2 codes:
+	// 1. A tiled vector-matrix multiplication implementation is available in /resources/gpu_experiments/mat_vec_gpu.cu of this repository.
+	// 2. A tiled matrix multiplication for a special case where the "w" (row size of A and column size of B) is small is shown in:
 	// https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html#shared-memory-in-matrix-multiplication-c-ab
+	// Note that a tile in the NVIDIA code is 2-dimensional when As and Bs above declares a 1-dimensional array.
+	// (Because you cannot declare dynamic 2-dimensional array in C/C++.)
+	// That means you will have to use that 1-d array as a 2-d array using the old "row*width + column" translation.
 }
 
 /////////////////////////////////////////////////////////////////////////
