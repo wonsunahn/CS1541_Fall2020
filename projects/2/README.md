@@ -393,7 +393,7 @@ Memory:readHits=2:writeHits=0
 
 There are a few invariants here:
 
-* L2Cache hits = DL1Cache misses + IL1Cache misses
+* L2Cache hits + L2Cache misses = DL1Cache misses + IL1Cache misses + DL1Cache writeBacks + IL1Cache writeBacks
 * Memory hits = L2Cache misses
 
 Make sure they hold in your code too.
