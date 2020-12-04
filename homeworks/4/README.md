@@ -42,7 +42,7 @@ You need to log in to one of these machines to do the work.
    ```
    If you want a more fancy SSH client, you can download Putty, a free open source terminal:
    https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
-   Connect to "linux.cs.pitt.edu" by typing that in the "Host Name" box.  Make sure that port is 22 and SSH is selected in the radio button options.
+   Connect to "pc6110-e1.cs.pitt.edu" by typing that in the "Host Name" box.  Make sure that port is 22 and SSH is selected in the radio button options.
 
 3. Once connected, the host will ask for your Pitt SSO credentials.  Enter your ID and password.
 
