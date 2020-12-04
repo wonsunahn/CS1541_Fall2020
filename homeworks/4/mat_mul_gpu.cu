@@ -96,7 +96,7 @@ void copy_host_to_device(float* A, float* B, int n)
 	// TODO:
 	// 1. Allocate GPU memory for d_A, d_B, d_C using cudaMalloc.
 	// 2. Copy input arrays A, B to d_A, d_B using cudaMemcpy.
-	// 3. Call cudaMemset on array C to initialize all elements to 0.
+	// 3. Call cudaMemset on array d_C to initialize all elements to 0.
 
 	gettimeofday (&tv ,   &tz);
 	time_end = (double)tv.tv_sec + (double)tv.tv_usec / 1000000.0;
